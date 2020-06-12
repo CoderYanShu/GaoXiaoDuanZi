@@ -1,0 +1,734 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5FBE369504FAB6A8400DD241 /* Pods_GXDZ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A42F9E350AA40E2FB32990EA /* Pods_GXDZ.framework */; };
+		67AEAD4C2493A8E100A57CB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AEAD342493A8E100A57CB0 /* main.m */; };
+		67AEAD4D2493A8E100A57CB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AEAD352493A8E100A57CB0 /* AppDelegate.m */; };
+		67AEAD4F2493A8E100A57CB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67AEAD492493A8E100A57CB0 /* Assets.xcassets */; };
+		67AEAD502493A8E100A57CB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AEAD4A2493A8E100A57CB0 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2B02FD92BEE186158F087755 /* Pods-GXDZ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GXDZ.debug.xcconfig"; path = "Target Support Files/Pods-GXDZ/Pods-GXDZ.debug.xcconfig"; sourceTree = "<group>"; };
+		67AEACFF2493A65900A57CB0 /* 搞笑段子.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "搞笑段子.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67AEAD332493A8E100A57CB0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		67AEAD342493A8E100A57CB0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		67AEAD352493A8E100A57CB0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		67AEAD362493A8E100A57CB0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67AEAD492493A8E100A57CB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		67AEAD4B2493A8E100A57CB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		67AEAD782493AC2C00A57CB0 /* GXDZ.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GXDZ.pch; sourceTree = "<group>"; };
+		A42F9E350AA40E2FB32990EA /* Pods_GXDZ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GXDZ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E240CC9E632C84A394FE9A68 /* Pods-GXDZ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GXDZ.release.xcconfig"; path = "Target Support Files/Pods-GXDZ/Pods-GXDZ.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		67AEACFC2493A65900A57CB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FBE369504FAB6A8400DD241 /* Pods_GXDZ.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		120CF98F4A44C28F1972DD92 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A42F9E350AA40E2FB32990EA /* Pods_GXDZ.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4043069800DD70B340D7DA45 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2B02FD92BEE186158F087755 /* Pods-GXDZ.debug.xcconfig */,
+				E240CC9E632C84A394FE9A68 /* Pods-GXDZ.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		67AEACF62493A65900A57CB0 = {
+			isa = PBXGroup;
+			children = (
+				67AEAD012493A65900A57CB0 /* GXDZ */,
+				67AEAD002493A65900A57CB0 /* Products */,
+				4043069800DD70B340D7DA45 /* Pods */,
+				120CF98F4A44C28F1972DD92 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		67AEAD002493A65900A57CB0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				67AEACFF2493A65900A57CB0 /* 搞笑段子.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		67AEAD012493A65900A57CB0 /* GXDZ */ = {
+			isa = PBXGroup;
+			children = (
+				67AEAD1B2493A8E100A57CB0 /* Classes */,
+				67AEAD482493A8E100A57CB0 /* Resource */,
+			);
+			path = GXDZ;
+			sourceTree = "<group>";
+		};
+		67AEAD1B2493A8E100A57CB0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				67AEAD1C2493A8E100A57CB0 /* Essence(精华) */,
+				67AEAD202493A8E100A57CB0 /* Friend(关注) */,
+				67AEAD242493A8E100A57CB0 /* Setting(设置) */,
+				67AEAD282493A8E100A57CB0 /* Advert(广告) */,
+				67AEAD2C2493A8E100A57CB0 /* New(新贴) */,
+				67AEAD302493A8E100A57CB0 /* Other(其他) */,
+				67AEAD382493A8E100A57CB0 /* Base(列表视图) */,
+				67AEAD3C2493A8E100A57CB0 /* Main(主要) */,
+				67AEAD402493A8E100A57CB0 /* Me(我) */,
+				67AEAD442493A8E100A57CB0 /* Publish(发布) */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		67AEAD1C2493A8E100A57CB0 /* Essence(精华) */ = {
+			isa = PBXGroup;
+			children = (
+				67AEAD1D2493A8E100A57CB0 /* Controller */,
+				67AEAD1E2493A8E100A57CB0 /* Model */,
+				67AEAD1F2493A8E100A57CB0 /* View */,
+			);
+			path = "Essence(精华)";
+			sourceTree = "<group>";
+		};
+		67AEAD1D2493A8E100A57CB0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		67AEAD1E2493A8E100A57CB0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		67AEAD1F2493A8E100A57CB0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		67AEAD202493A8E100A57CB0 /* Friend(关注) */ = {
+			isa = PBXGroup;
+			children = (
+				67AEAD212493A8E100A57CB0 /* Controller */,
+				67AEAD222493A8E100A57CB0 /* Model */,
+				67AEAD232493A8E100A57CB0 /* View */,
+			);
+			path = "Friend(关注)";
+			sourceTree = "<group>";
+		};
+		67AEAD212493A8E100A57CB0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		67AEAD222493A8E100A57CB0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		67AEAD232493A8E100A57CB0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		67AEAD242493A8E100A57CB0 /* Setting(设置) */ = {
+			isa = PBXGroup;
+			children = (
+				67AEAD252493A8E100A57CB0 /* Controller */,
+				67AEAD262493A8E100A57CB0 /* Model */,
+				67AEAD272493A8E100A57CB0 /* View */,
+			);
+			path = "Setting(设置)";
+			sourceTree = "<group>";
+		};
+		67AEAD252493A8E100A57CB0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		67AEAD262493A8E100A57CB0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		67AEAD272493A8E100A57CB0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		67AEAD282493A8E100A57CB0 /* Advert(广告) */ = {
+			isa = PBXGroup;
+			children = (
+				67AEAD292493A8E100A57CB0 /* Controller */,
+				67AEAD2A2493A8E100A57CB0 /* Model */,
+				67AEAD2B2493A8E100A57CB0 /* View */,
+			);
+			path = "Advert(广告)";
+			sourceTree = "<group>";
+		};
+		67AEAD292493A8E100A57CB0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		67AEAD2A2493A8E100A57CB0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		67AEAD2B2493A8E100A57CB0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		67AEAD2C2493A8E100A57CB0 /* New(新贴) */ = {
+			isa = PBXGroup;
+			children = (
+				67AEAD2D2493A8E100A57CB0 /* Controller */,
+				67AEAD2E2493A8E100A57CB0 /* Model */,
+				67AEAD2F2493A8E100A57CB0 /* View */,
+			);
+			path = "New(新贴)";
+			sourceTree = "<group>";
+		};
+		67AEAD2D2493A8E100A57CB0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		67AEAD2E2493A8E100A57CB0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		67AEAD2F2493A8E100A57CB0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		67AEAD302493A8E100A57CB0 /* Other(其他) */ = {
+			isa = PBXGroup;
+			children = (
+				67AEAD312493A8E100A57CB0 /* Category */,
+				67AEAD322493A8E100A57CB0 /* System */,
+				67AEAD372493A8E100A57CB0 /* Tool */,
+			);
+			path = "Other(其他)";
+			sourceTree = "<group>";
+		};
+		67AEAD312493A8E100A57CB0 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		67AEAD322493A8E100A57CB0 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				67AEAD332493A8E100A57CB0 /* AppDelegate.h */,
+				67AEAD352493A8E100A57CB0 /* AppDelegate.m */,
+				67AEAD782493AC2C00A57CB0 /* GXDZ.pch */,
+				67AEAD342493A8E100A57CB0 /* main.m */,
+				67AEAD362493A8E100A57CB0 /* Info.plist */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		67AEAD372493A8E100A57CB0 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		67AEAD382493A8E100A57CB0 /* Base(列表视图) */ = {
+			isa = PBXGroup;
+			children = (
+				67AEAD392493A8E100A57CB0 /* Controller */,
+				67AEAD3A2493A8E100A57CB0 /* Model */,
+				67AEAD3B2493A8E100A57CB0 /* View */,
+			);
+			path = "Base(列表视图)";
+			sourceTree = "<group>";
+		};
+		67AEAD392493A8E100A57CB0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		67AEAD3A2493A8E100A57CB0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		67AEAD3B2493A8E100A57CB0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		67AEAD3C2493A8E100A57CB0 /* Main(主要) */ = {
+			isa = PBXGroup;
+			children = (
+				67AEAD3D2493A8E100A57CB0 /* Controller */,
+				67AEAD3E2493A8E100A57CB0 /* Model */,
+				67AEAD3F2493A8E100A57CB0 /* View */,
+			);
+			path = "Main(主要)";
+			sourceTree = "<group>";
+		};
+		67AEAD3D2493A8E100A57CB0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		67AEAD3E2493A8E100A57CB0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		67AEAD3F2493A8E100A57CB0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		67AEAD402493A8E100A57CB0 /* Me(我) */ = {
+			isa = PBXGroup;
+			children = (
+				67AEAD412493A8E100A57CB0 /* Controller */,
+				67AEAD422493A8E100A57CB0 /* Model */,
+				67AEAD432493A8E100A57CB0 /* View */,
+			);
+			path = "Me(我)";
+			sourceTree = "<group>";
+		};
+		67AEAD412493A8E100A57CB0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		67AEAD422493A8E100A57CB0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		67AEAD432493A8E100A57CB0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		67AEAD442493A8E100A57CB0 /* Publish(发布) */ = {
+			isa = PBXGroup;
+			children = (
+				67AEAD452493A8E100A57CB0 /* Controller */,
+				67AEAD462493A8E100A57CB0 /* Model */,
+				67AEAD472493A8E100A57CB0 /* View */,
+			);
+			path = "Publish(发布)";
+			sourceTree = "<group>";
+		};
+		67AEAD452493A8E100A57CB0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		67AEAD462493A8E100A57CB0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		67AEAD472493A8E100A57CB0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		67AEAD482493A8E100A57CB0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				67AEAD492493A8E100A57CB0 /* Assets.xcassets */,
+				67AEAD4A2493A8E100A57CB0 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		67AEACFE2493A65900A57CB0 /* GXDZ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67AEAD182493A65A00A57CB0 /* Build configuration list for PBXNativeTarget "GXDZ" */;
+			buildPhases = (
+				B216168931A600B04AD337C3 /* [CP] Check Pods Manifest.lock */,
+				67AEACFB2493A65900A57CB0 /* Sources */,
+				67AEACFC2493A65900A57CB0 /* Frameworks */,
+				67AEACFD2493A65900A57CB0 /* Resources */,
+				6E3C608ADBFCCCA2DC73E113 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GXDZ;
+			productName = GXDZ;
+			productReference = 67AEACFF2493A65900A57CB0 /* 搞笑段子.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		67AEACF72493A65900A57CB0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ZY;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "ZYP OnTheRoad";
+				TargetAttributes = {
+					67AEACFE2493A65900A57CB0 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = 67AEACFA2493A65900A57CB0 /* Build configuration list for PBXProject "GXDZ" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 67AEACF62493A65900A57CB0;
+			productRefGroup = 67AEAD002493A65900A57CB0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				67AEACFE2493A65900A57CB0 /* GXDZ */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		67AEACFD2493A65900A57CB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67AEAD502493A8E100A57CB0 /* LaunchScreen.storyboard in Resources */,
+				67AEAD4F2493A8E100A57CB0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6E3C608ADBFCCCA2DC73E113 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GXDZ/Pods-GXDZ-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GXDZ/Pods-GXDZ-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GXDZ/Pods-GXDZ-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B216168931A600B04AD337C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GXDZ-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		67AEACFB2493A65900A57CB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67AEAD4D2493A8E100A57CB0 /* AppDelegate.m in Sources */,
+				67AEAD4C2493A8E100A57CB0 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		67AEAD4A2493A8E100A57CB0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67AEAD4B2493A8E100A57CB0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		67AEAD162493A65A00A57CB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		67AEAD172493A65A00A57CB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		67AEAD192493A65A00A57CB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B02FD92BEE186158F087755 /* Pods-GXDZ.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GXDZ/Classes/Other(其他)/System/GXDZ.pch";
+				INFOPLIST_FILE = "GXDZ/Classes/Other(其他)/System/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ZYP.GXDZ;
+				PRODUCT_NAME = "搞笑段子";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		67AEAD1A2493A65A00A57CB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E240CC9E632C84A394FE9A68 /* Pods-GXDZ.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GXDZ/Classes/Other(其他)/System/GXDZ.pch";
+				INFOPLIST_FILE = "GXDZ/Classes/Other(其他)/System/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ZYP.GXDZ;
+				PRODUCT_NAME = "搞笑段子";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		67AEACFA2493A65900A57CB0 /* Build configuration list for PBXProject "GXDZ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67AEAD162493A65A00A57CB0 /* Debug */,
+				67AEAD172493A65A00A57CB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67AEAD182493A65A00A57CB0 /* Build configuration list for PBXNativeTarget "GXDZ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67AEAD192493A65A00A57CB0 /* Debug */,
+				67AEAD1A2493A65A00A57CB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 67AEACF72493A65900A57CB0 /* Project object */;
+}
