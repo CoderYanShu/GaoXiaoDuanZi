@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,11 @@
 		67AEAD4D2493A8E100A57CB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AEAD352493A8E100A57CB0 /* AppDelegate.m */; };
 		67AEAD4F2493A8E100A57CB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67AEAD492493A8E100A57CB0 /* Assets.xcassets */; };
 		67AEAD502493A8E100A57CB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AEAD4A2493A8E100A57CB0 /* LaunchScreen.storyboard */; };
+		67FAB2D62493C0E500413243 /* ZYNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FAB2D52493C0E500413243 /* ZYNetworkTool.m */; };
+		67FAB2DA2493C9BC00413243 /* ZYAdvertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FAB2D82493C9BC00413243 /* ZYAdvertController.m */; };
+		67FAB2DB2493C9BC00413243 /* ZYAdvertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67FAB2D92493C9BC00413243 /* ZYAdvertController.xib */; };
+		67FAB2DE2493CEDD00413243 /* ZYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FAB2DD2493CEDD00413243 /* ZYTabBarController.m */; };
+		67FAB2E12493D08B00413243 /* ZYAdvertItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FAB2E02493D08B00413243 /* ZYAdvertItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,15 @@
 		67AEAD492493A8E100A57CB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67AEAD4B2493A8E100A57CB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67AEAD782493AC2C00A57CB0 /* GXDZ.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GXDZ.pch; sourceTree = "<group>"; };
+		67FAB2D42493C0E500413243 /* ZYNetworkTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYNetworkTool.h; sourceTree = "<group>"; };
+		67FAB2D52493C0E500413243 /* ZYNetworkTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYNetworkTool.m; sourceTree = "<group>"; };
+		67FAB2D72493C9BC00413243 /* ZYAdvertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYAdvertController.h; sourceTree = "<group>"; };
+		67FAB2D82493C9BC00413243 /* ZYAdvertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYAdvertController.m; sourceTree = "<group>"; };
+		67FAB2D92493C9BC00413243 /* ZYAdvertController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYAdvertController.xib; sourceTree = "<group>"; };
+		67FAB2DC2493CEDD00413243 /* ZYTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYTabBarController.h; sourceTree = "<group>"; };
+		67FAB2DD2493CEDD00413243 /* ZYTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYTabBarController.m; sourceTree = "<group>"; };
+		67FAB2DF2493D08B00413243 /* ZYAdvertItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYAdvertItem.h; sourceTree = "<group>"; };
+		67FAB2E02493D08B00413243 /* ZYAdvertItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYAdvertItem.m; sourceTree = "<group>"; };
 		A42F9E350AA40E2FB32990EA /* Pods_GXDZ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GXDZ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E240CC9E632C84A394FE9A68 /* Pods-GXDZ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GXDZ.release.xcconfig"; path = "Target Support Files/Pods-GXDZ/Pods-GXDZ.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,7 +68,6 @@
 				2B02FD92BEE186158F087755 /* Pods-GXDZ.debug.xcconfig */,
 				E240CC9E632C84A394FE9A68 /* Pods-GXDZ.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,6 +221,9 @@
 		67AEAD292493A8E100A57CB0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				67FAB2D72493C9BC00413243 /* ZYAdvertController.h */,
+				67FAB2D82493C9BC00413243 /* ZYAdvertController.m */,
+				67FAB2D92493C9BC00413243 /* ZYAdvertController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -215,6 +231,8 @@
 		67AEAD2A2493A8E100A57CB0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				67FAB2DF2493D08B00413243 /* ZYAdvertItem.h */,
+				67FAB2E02493D08B00413243 /* ZYAdvertItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -289,6 +307,8 @@
 		67AEAD372493A8E100A57CB0 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				67FAB2D42493C0E500413243 /* ZYNetworkTool.h */,
+				67FAB2D52493C0E500413243 /* ZYNetworkTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -337,6 +357,8 @@
 		67AEAD3D2493A8E100A57CB0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				67FAB2DC2493CEDD00413243 /* ZYTabBarController.h */,
+				67FAB2DD2493CEDD00413243 /* ZYTabBarController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -488,6 +510,7 @@
 			files = (
 				67AEAD502493A8E100A57CB0 /* LaunchScreen.storyboard in Resources */,
 				67AEAD4F2493A8E100A57CB0 /* Assets.xcassets in Resources */,
+				67FAB2DB2493C9BC00413243 /* ZYAdvertController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,8 +563,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67FAB2DA2493C9BC00413243 /* ZYAdvertController.m in Sources */,
+				67FAB2E12493D08B00413243 /* ZYAdvertItem.m in Sources */,
 				67AEAD4D2493A8E100A57CB0 /* AppDelegate.m in Sources */,
 				67AEAD4C2493A8E100A57CB0 /* main.m in Sources */,
+				67FAB2DE2493CEDD00413243 /* ZYTabBarController.m in Sources */,
+				67FAB2D62493C0E500413243 /* ZYNetworkTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

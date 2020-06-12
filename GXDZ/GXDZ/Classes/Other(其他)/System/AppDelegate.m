@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ZYAdvertController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    _window = [[UIWindow alloc] init];
+    
+    ZYAdvertController *vc = [[ZYAdvertController alloc] init];
+    
+    _window.rootViewController = vc;
+    
+    [_window makeKeyAndVisible];
+    
     return YES;
 }
 
