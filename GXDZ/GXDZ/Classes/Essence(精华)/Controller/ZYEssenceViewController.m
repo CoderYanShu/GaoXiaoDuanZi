@@ -17,12 +17,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    //导航条的内容由栈顶控制器 navigationItem 来决定
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //将 UIButton 包装成 UIBarButtonItem 点击范围会扩大
+    //UIBarButtonItem 点击范围大于 UIButton
+    //解决方法: 将 UIButton 先包装成 UIView 再将 UIView 包装成 UIBarButtonItem
 }
+
+
 
 #pragma mark - Table view data source
 

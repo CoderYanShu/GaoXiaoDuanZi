@@ -28,7 +28,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="746"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bu9-Vj-psP">
-                    <rect key="frame" x="334" y="64" width="60" height="30"/>
+                    <rect key="frame" x="334" y="44" width="60" height="30"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.51430518483078169" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="PsQ-Ca-rJR"/>
@@ -44,7 +44,7 @@
             <constraints>
                 <constraint firstItem="iHL-AN-NzL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8F3-94-VRs"/>
                 <constraint firstAttribute="bottom" secondItem="iHL-AN-NzL" secondAttribute="bottom" constant="150" id="PMQ-AT-zya"/>
-                <constraint firstItem="bu9-Vj-psP" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="ZZf-y2-h9v"/>
+                <constraint firstItem="bu9-Vj-psP" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="Riw-RH-dy6"/>
                 <constraint firstItem="iHL-AN-NzL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="k0r-m3-dpo"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="bu9-Vj-psP" secondAttribute="trailing" constant="20" id="vNd-W5-9NV"/>
                 <constraint firstAttribute="trailing" secondItem="iHL-AN-NzL" secondAttribute="trailing" id="w9K-f5-krz"/>

@@ -12,6 +12,10 @@
 		67AEAD4D2493A8E100A57CB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AEAD352493A8E100A57CB0 /* AppDelegate.m */; };
 		67AEAD4F2493A8E100A57CB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67AEAD492493A8E100A57CB0 /* Assets.xcassets */; };
 		67AEAD502493A8E100A57CB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AEAD4A2493A8E100A57CB0 /* LaunchScreen.storyboard */; };
+		67D4707B2494F28E00B5D967 /* ZYLogOnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D470792494F28E00B5D967 /* ZYLogOnViewController.m */; };
+		67D4707C2494F28E00B5D967 /* ZYLogOnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67D4707A2494F28E00B5D967 /* ZYLogOnViewController.xib */; };
+		67D4707F2494FC2B00B5D967 /* ZYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D4707E2494FC2B00B5D967 /* ZYNavigationController.m */; };
+		67D470852494FFF900B5D967 /* UIBarButtonItem+ZYItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D470842494FFF900B5D967 /* UIBarButtonItem+ZYItem.m */; };
 		67FAB2D62493C0E500413243 /* ZYNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FAB2D52493C0E500413243 /* ZYNetworkTool.m */; };
 		67FAB2DA2493C9BC00413243 /* ZYAdvertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FAB2D82493C9BC00413243 /* ZYAdvertController.m */; };
 		67FAB2DB2493C9BC00413243 /* ZYAdvertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67FAB2D92493C9BC00413243 /* ZYAdvertController.xib */; };
@@ -36,6 +40,13 @@
 		67AEAD492493A8E100A57CB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67AEAD4B2493A8E100A57CB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67AEAD782493AC2C00A57CB0 /* GXDZ.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GXDZ.pch; sourceTree = "<group>"; };
+		67D470782494F28E00B5D967 /* ZYLogOnViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYLogOnViewController.h; sourceTree = "<group>"; };
+		67D470792494F28E00B5D967 /* ZYLogOnViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYLogOnViewController.m; sourceTree = "<group>"; };
+		67D4707A2494F28E00B5D967 /* ZYLogOnViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYLogOnViewController.xib; sourceTree = "<group>"; };
+		67D4707D2494FC2B00B5D967 /* ZYNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYNavigationController.h; sourceTree = "<group>"; };
+		67D4707E2494FC2B00B5D967 /* ZYNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYNavigationController.m; sourceTree = "<group>"; };
+		67D470832494FFF900B5D967 /* UIBarButtonItem+ZYItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+ZYItem.h"; sourceTree = "<group>"; };
+		67D470842494FFF900B5D967 /* UIBarButtonItem+ZYItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+ZYItem.m"; sourceTree = "<group>"; };
 		67FAB2D42493C0E500413243 /* ZYNetworkTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYNetworkTool.h; sourceTree = "<group>"; };
 		67FAB2D52493C0E500413243 /* ZYNetworkTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYNetworkTool.m; sourceTree = "<group>"; };
 		67FAB2D72493C9BC00413243 /* ZYAdvertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYAdvertController.h; sourceTree = "<group>"; };
@@ -124,6 +135,7 @@
 			children = (
 				67AEAD1C2493A8E100A57CB0 /* Essence(精华) */,
 				67AEAD202493A8E100A57CB0 /* Friend(关注) */,
+				67D470742494F23600B5D967 /* LogOn(登录) */,
 				67AEAD242493A8E100A57CB0 /* Setting(设置) */,
 				67AEAD282493A8E100A57CB0 /* Advert(广告) */,
 				67AEAD2C2493A8E100A57CB0 /* New(新贴) */,
@@ -319,6 +331,8 @@
 				67FAB2F224946FC700413243 /* UIView+Farme.m */,
 				67FAB2F424947DF600413243 /* UIImage+ZYRender.h */,
 				67FAB2F524947DF600413243 /* UIImage+ZYRender.m */,
+				67D470832494FFF900B5D967 /* UIBarButtonItem+ZYItem.h */,
+				67D470842494FFF900B5D967 /* UIBarButtonItem+ZYItem.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -390,6 +404,8 @@
 			children = (
 				67FAB2DC2493CEDD00413243 /* ZYTabBarController.h */,
 				67FAB2DD2493CEDD00413243 /* ZYTabBarController.m */,
+				67D4707D2494FC2B00B5D967 /* ZYNavigationController.h */,
+				67D4707E2494FC2B00B5D967 /* ZYNavigationController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -483,6 +499,41 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		67D470742494F23600B5D967 /* LogOn(登录) */ = {
+			isa = PBXGroup;
+			children = (
+				67D470752494F23600B5D967 /* Controller */,
+				67D470762494F23600B5D967 /* Model */,
+				67D470772494F23600B5D967 /* View */,
+			);
+			name = "LogOn(登录)";
+			path = "GXDZ/Classes/LogOn(登录)";
+			sourceTree = SOURCE_ROOT;
+		};
+		67D470752494F23600B5D967 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				67D470782494F28E00B5D967 /* ZYLogOnViewController.h */,
+				67D470792494F28E00B5D967 /* ZYLogOnViewController.m */,
+				67D4707A2494F28E00B5D967 /* ZYLogOnViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		67D470762494F23600B5D967 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		67D470772494F23600B5D967 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -546,6 +597,7 @@
 				67AEAD502493A8E100A57CB0 /* LaunchScreen.storyboard in Resources */,
 				67AEAD4F2493A8E100A57CB0 /* Assets.xcassets in Resources */,
 				67FAB2DB2493C9BC00413243 /* ZYAdvertController.xib in Resources */,
+				67D4707C2494F28E00B5D967 /* ZYLogOnViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,13 +655,16 @@
 				67FAB2ED24946C3B00413243 /* ZYNewViewController.m in Sources */,
 				67AEAD4D2493A8E100A57CB0 /* AppDelegate.m in Sources */,
 				67AEAD4C2493A8E100A57CB0 /* main.m in Sources */,
+				67D4707B2494F28E00B5D967 /* ZYLogOnViewController.m in Sources */,
 				67FAB2DE2493CEDD00413243 /* ZYTabBarController.m in Sources */,
 				67FAB2E724946BE000413243 /* ZYPublishViewController.m in Sources */,
+				67D4707F2494FC2B00B5D967 /* ZYNavigationController.m in Sources */,
 				67FAB2EA24946C0E00413243 /* ZYMeViewController.m in Sources */,
 				67FAB2F324946FC700413243 /* UIView+Farme.m in Sources */,
 				67FAB2E424946B9F00413243 /* ZYEssenceViewController.m in Sources */,
 				67FAB2F624947DF600413243 /* UIImage+ZYRender.m in Sources */,
 				67FAB2F024946C8000413243 /* ZYFriendViewController.m in Sources */,
+				67D470852494FFF900B5D967 /* UIBarButtonItem+ZYItem.m in Sources */,
 				67FAB2D62493C0E500413243 /* ZYNetworkTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

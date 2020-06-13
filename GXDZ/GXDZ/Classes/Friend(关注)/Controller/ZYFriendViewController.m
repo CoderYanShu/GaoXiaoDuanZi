@@ -7,6 +7,8 @@
 //
 
 #import "ZYFriendViewController.h"
+#import "UIBarButtonItem+ZYItem.h"
+
 
 @interface ZYFriendViewController ()
 
@@ -16,17 +18,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    [self setUpNavigationItem];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)setUpNavigationItem {
+    
+    self.navigationItem.title = @"我的关注";
+    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithNormalImage:@"friendsRecommentIcon" highlightImage:@"friendsRecommentIcon-click" target:self action:@selector(friendsRecommentClick)];
+    
 }
-*/
 
+- (void)friendsRecommentClick {
+    
+}
 @end

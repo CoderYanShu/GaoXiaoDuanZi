@@ -14,7 +14,11 @@
 #import "ZYNewViewController.h"
 #import "ZYMeViewController.h"
 
+#import "ZYLogOnViewController.h"
+
 #import "UIImage+ZYRender.h"
+
+#import "ZYNavigationController.h"
 
 @interface ZYTabBarController ()
 
@@ -40,15 +44,22 @@
 
 #pragma mark- 发布按钮点击
 - (void)publishButtonClick {
-    //创建发布控制器
-    ZYPublishViewController *publishVC = [[ZYPublishViewController alloc] init];
+    //假数据
+    BOOL isLogOn = NO;
+    
+    UIViewController *vc = nil;
+    //判断是否已经登录
+    if (isLogOn) {
+        //创建发布控制器
+        vc = [[ZYPublishViewController alloc] init];
+    }
+    else {
+        vc = [[ZYLogOnViewController alloc] init];
+    }
     //设置 显示风格
-    publishVC.modalPresentationStyle = UIModalPresentationFullScreen;
-    publishVC.view.backgroundColor = UIColor.brownColor;
-    //显示
-    [self presentViewController:publishVC animated:YES completion:nil];
-    
-    
+    vc.modalPresentationStyle = UIModalPresentationFullScreen;
+     //显示
+    [self presentViewController:vc animated:YES completion:nil];
 }
 //程序的根控制器(UITabBarController 的 view 控制器创建时加载,UIViewontroller的 view 懒加载)
 //UITabBar 里面的按钮内容由子控制器的 UITabBarItem 决定
@@ -75,30 +86,25 @@
 - (void)addAllChildViewControllers {
     //精华
     ZYEssenceViewController *essenceVC = [[ZYEssenceViewController alloc] init];
-    UINavigationController *navEssenceVC = [[UINavigationController alloc] initWithRootViewController:essenceVC];
+    ZYNavigationController *navEssenceVC = [[ZYNavigationController alloc] initWithRootViewController:essenceVC];
     
     //新帖
     ZYNewViewController *newVC = [[ZYNewViewController alloc] init];
-    UINavigationController *navNewVC = [[UINavigationController alloc] initWithRootViewController:newVC];
+    ZYNavigationController *navNewVC = [[ZYNavigationController alloc] initWithRootViewController:newVC];
     
     //发布(仅仅用来占位的控制器)
     UIViewController *publishVC = [[UIViewController alloc] init];
     
     //关注
     ZYFriendViewController *friendVC = [[ZYFriendViewController alloc] init];
-    UINavigationController *navFriendVC = [[UINavigationController alloc] initWithRootViewController:friendVC];
+    ZYNavigationController *navFriendVC = [[ZYNavigationController alloc] initWithRootViewController:friendVC];
     
     //我
     ZYMeViewController *meVC = [[ZYMeViewController alloc] init];
-    UINavigationController *navMeVC = [[UINavigationController alloc] initWithRootViewController:meVC];
+    ZYNavigationController *navMeVC = [[ZYNavigationController alloc] initWithRootViewController:meVC];
     
     //所有子控制器数组
     self.viewControllers = @[navEssenceVC, navNewVC, publishVC, navFriendVC, navMeVC];
-    
-    essenceVC.view.backgroundColor = UIColor.redColor;
-    newVC.view.backgroundColor = UIColor.yellowColor;
-    friendVC.view.backgroundColor = UIColor.blueColor;
-    meVC.view.backgroundColor = UIColor.greenColor;
 }
 
 #pragma mark- 设置所有的 tabBarItem
@@ -119,7 +125,7 @@
     
     [self setUpTabBarItemWithIndex:3 title:@"关注" imageNamed:@"tabBar_friendTrends_icon" selectedImageNamed:@"tabBar_friendTrends_click_icon"];
     
-    [self setUpTabBarItemWithIndex:4 title:@"我" imageNamed:@"tabBar_me_icon" selectedImageNamed:@"tabBar_me_click_icon"];
+    [self setUpTabBarItemWithIndex:4 title:@"我的" imageNamed:@"tabBar_me_icon" selectedImageNamed:@"tabBar_me_click_icon"];
 }
 
 #pragma mark-  设置子控制器的 tabBarItem

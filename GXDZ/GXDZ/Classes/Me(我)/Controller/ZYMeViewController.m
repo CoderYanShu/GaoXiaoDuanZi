@@ -7,6 +7,7 @@
 //
 
 #import "ZYMeViewController.h"
+#import "UIBarButtonItem+ZYItem.h"
 
 @interface ZYMeViewController ()
 
@@ -17,13 +18,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self setUpNavigationItem];
 }
 
+- (void)setUpNavigationItem {
+    
+    self.navigationItem.title = @"我的";
+    
+    UIBarButtonItem *nightMode = [UIBarButtonItem itemWithNormalImage:@"mine-moon-icon" selectedImage:@"mine-moon-icon-click" target:self action:@selector(moonClick:)];
+    
+    UIBarButtonItem *setting = [UIBarButtonItem itemWithNormalImage:@"mine-setting-icon" highlightImage:@"mine-setting-icon-click" target:self action:@selector(settingClick)];
+    
+    self.navigationItem.rightBarButtonItems = @[setting ,nightMode];
+}
+
+- (void)moonClick:(UIButton *)button {
+    
+    button.selected = !button.selected;
+}
+
+- (void)settingClick {
+    
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
