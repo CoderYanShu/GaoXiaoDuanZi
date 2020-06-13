@@ -1,8 +1,8 @@
 //
-//  ZYTabBarController.h
+//  ZYEssenceViewController.h
 //  GXDZ
 //
-//  Created by ZYP OnTheRoad on 2020/6/12.
+//  Created by ZYP OnTheRoad on 2020/6/13.
 //  Copyright © 2020 ZYP OnTheRoad. All rights reserved.
 //
 
@@ -10,8 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// 程序的主(根)控制器
-@interface ZYTabBarController : UITabBarController
+@interface ZYEssenceViewController : UITableViewController
 
 @end
 

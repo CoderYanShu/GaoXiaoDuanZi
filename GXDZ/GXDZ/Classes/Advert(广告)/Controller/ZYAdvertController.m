@@ -83,8 +83,10 @@
     }
     
 }
+
 #pragma mark- 加载广告数据
 - (void)getAdvertData {
+    
     NSString *url = @"http://dspsdk.spriteapp.com/get";
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
@@ -103,11 +105,13 @@
         //设置广告图片
         [self.advertView sd_setImageWithURL: [NSURL URLWithString: self.advertItem.pic]];
         
-    } failure:^(NSError * _Nonnull error) {
+    } failure:^(NSError *error) {
+        
         NSLog(@"%@",error.localizedDescription);
     }];
     
 }
+
 #pragma mark- 跳转到 app 主控制器
 - (IBAction)jumpButtonClick {
     //使定时器无效(停止计时器再次触发并请求将其从运行循环中移除)
@@ -121,6 +125,4 @@
     //设置 App rootViewController 为主控制器
     UIApplication.sharedApplication.keyWindow.rootViewController = tabBarVC;
 }
-
-
 @end

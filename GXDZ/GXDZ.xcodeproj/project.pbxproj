@@ -17,6 +17,12 @@
 		67FAB2DB2493C9BC00413243 /* ZYAdvertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67FAB2D92493C9BC00413243 /* ZYAdvertController.xib */; };
 		67FAB2DE2493CEDD00413243 /* ZYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FAB2DD2493CEDD00413243 /* ZYTabBarController.m */; };
 		67FAB2E12493D08B00413243 /* ZYAdvertItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FAB2E02493D08B00413243 /* ZYAdvertItem.m */; };
+		67FAB2E424946B9F00413243 /* ZYEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FAB2E324946B9F00413243 /* ZYEssenceViewController.m */; };
+		67FAB2E724946BE000413243 /* ZYPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FAB2E624946BE000413243 /* ZYPublishViewController.m */; };
+		67FAB2EA24946C0E00413243 /* ZYMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FAB2E924946C0E00413243 /* ZYMeViewController.m */; };
+		67FAB2ED24946C3B00413243 /* ZYNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FAB2EC24946C3B00413243 /* ZYNewViewController.m */; };
+		67FAB2F024946C8000413243 /* ZYFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FAB2EF24946C8000413243 /* ZYFriendViewController.m */; };
+		67FAB2F324946FC700413243 /* UIView+Farme.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FAB2F224946FC700413243 /* UIView+Farme.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +44,18 @@
 		67FAB2DD2493CEDD00413243 /* ZYTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYTabBarController.m; sourceTree = "<group>"; };
 		67FAB2DF2493D08B00413243 /* ZYAdvertItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYAdvertItem.h; sourceTree = "<group>"; };
 		67FAB2E02493D08B00413243 /* ZYAdvertItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYAdvertItem.m; sourceTree = "<group>"; };
+		67FAB2E224946B9F00413243 /* ZYEssenceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYEssenceViewController.h; sourceTree = "<group>"; };
+		67FAB2E324946B9F00413243 /* ZYEssenceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYEssenceViewController.m; sourceTree = "<group>"; };
+		67FAB2E524946BE000413243 /* ZYPublishViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYPublishViewController.h; sourceTree = "<group>"; };
+		67FAB2E624946BE000413243 /* ZYPublishViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYPublishViewController.m; sourceTree = "<group>"; };
+		67FAB2E824946C0E00413243 /* ZYMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYMeViewController.h; sourceTree = "<group>"; };
+		67FAB2E924946C0E00413243 /* ZYMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYMeViewController.m; sourceTree = "<group>"; };
+		67FAB2EB24946C3B00413243 /* ZYNewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYNewViewController.h; sourceTree = "<group>"; };
+		67FAB2EC24946C3B00413243 /* ZYNewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYNewViewController.m; sourceTree = "<group>"; };
+		67FAB2EE24946C8000413243 /* ZYFriendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYFriendViewController.h; sourceTree = "<group>"; };
+		67FAB2EF24946C8000413243 /* ZYFriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYFriendViewController.m; sourceTree = "<group>"; };
+		67FAB2F124946FC700413243 /* UIView+Farme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Farme.h"; sourceTree = "<group>"; };
+		67FAB2F224946FC700413243 /* UIView+Farme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Farme.m"; sourceTree = "<group>"; };
 		A42F9E350AA40E2FB32990EA /* Pods_GXDZ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GXDZ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E240CC9E632C84A394FE9A68 /* Pods-GXDZ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GXDZ.release.xcconfig"; path = "Target Support Files/Pods-GXDZ/Pods-GXDZ.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +146,8 @@
 		67AEAD1D2493A8E100A57CB0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				67FAB2E224946B9F00413243 /* ZYEssenceViewController.h */,
+				67FAB2E324946B9F00413243 /* ZYEssenceViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -159,6 +179,8 @@
 		67AEAD212493A8E100A57CB0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				67FAB2EE24946C8000413243 /* ZYFriendViewController.h */,
+				67FAB2EF24946C8000413243 /* ZYFriendViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -257,6 +279,8 @@
 		67AEAD2D2493A8E100A57CB0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				67FAB2EB24946C3B00413243 /* ZYNewViewController.h */,
+				67FAB2EC24946C3B00413243 /* ZYNewViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -288,6 +312,8 @@
 		67AEAD312493A8E100A57CB0 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				67FAB2F124946FC700413243 /* UIView+Farme.h */,
+				67FAB2F224946FC700413243 /* UIView+Farme.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -390,6 +416,8 @@
 		67AEAD412493A8E100A57CB0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				67FAB2E824946C0E00413243 /* ZYMeViewController.h */,
+				67FAB2E924946C0E00413243 /* ZYMeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -421,6 +449,8 @@
 		67AEAD452493A8E100A57CB0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				67FAB2E524946BE000413243 /* ZYPublishViewController.h */,
+				67FAB2E624946BE000413243 /* ZYPublishViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -565,9 +595,15 @@
 			files = (
 				67FAB2DA2493C9BC00413243 /* ZYAdvertController.m in Sources */,
 				67FAB2E12493D08B00413243 /* ZYAdvertItem.m in Sources */,
+				67FAB2ED24946C3B00413243 /* ZYNewViewController.m in Sources */,
 				67AEAD4D2493A8E100A57CB0 /* AppDelegate.m in Sources */,
 				67AEAD4C2493A8E100A57CB0 /* main.m in Sources */,
 				67FAB2DE2493CEDD00413243 /* ZYTabBarController.m in Sources */,
+				67FAB2E724946BE000413243 /* ZYPublishViewController.m in Sources */,
+				67FAB2EA24946C0E00413243 /* ZYMeViewController.m in Sources */,
+				67FAB2F324946FC700413243 /* UIView+Farme.m in Sources */,
+				67FAB2E424946B9F00413243 /* ZYEssenceViewController.m in Sources */,
+				67FAB2F024946C8000413243 /* ZYFriendViewController.m in Sources */,
 				67FAB2D62493C0E500413243 /* ZYNetworkTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
