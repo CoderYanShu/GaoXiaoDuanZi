@@ -9,6 +9,8 @@
 #ifndef GXDZ_pch
 #define GXDZ_pch
 
+#import "UIView+Farme.h"
 #import <SDWebImage.h>
 #import "ZYNetworkTool.h"
+
 #endif 

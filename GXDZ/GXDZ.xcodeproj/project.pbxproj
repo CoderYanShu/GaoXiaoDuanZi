@@ -23,6 +23,7 @@
 		67FAB2ED24946C3B00413243 /* ZYNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FAB2EC24946C3B00413243 /* ZYNewViewController.m */; };
 		67FAB2F024946C8000413243 /* ZYFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FAB2EF24946C8000413243 /* ZYFriendViewController.m */; };
 		67FAB2F324946FC700413243 /* UIView+Farme.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FAB2F224946FC700413243 /* UIView+Farme.m */; };
+		67FAB2F624947DF600413243 /* UIImage+ZYRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FAB2F524947DF600413243 /* UIImage+ZYRender.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,8 @@
 		67FAB2EF24946C8000413243 /* ZYFriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYFriendViewController.m; sourceTree = "<group>"; };
 		67FAB2F124946FC700413243 /* UIView+Farme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Farme.h"; sourceTree = "<group>"; };
 		67FAB2F224946FC700413243 /* UIView+Farme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Farme.m"; sourceTree = "<group>"; };
+		67FAB2F424947DF600413243 /* UIImage+ZYRender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZYRender.h"; sourceTree = "<group>"; };
+		67FAB2F524947DF600413243 /* UIImage+ZYRender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZYRender.m"; sourceTree = "<group>"; };
 		A42F9E350AA40E2FB32990EA /* Pods_GXDZ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GXDZ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E240CC9E632C84A394FE9A68 /* Pods-GXDZ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GXDZ.release.xcconfig"; path = "Target Support Files/Pods-GXDZ/Pods-GXDZ.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -314,6 +317,8 @@
 			children = (
 				67FAB2F124946FC700413243 /* UIView+Farme.h */,
 				67FAB2F224946FC700413243 /* UIView+Farme.m */,
+				67FAB2F424947DF600413243 /* UIImage+ZYRender.h */,
+				67FAB2F524947DF600413243 /* UIImage+ZYRender.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -603,6 +608,7 @@
 				67FAB2EA24946C0E00413243 /* ZYMeViewController.m in Sources */,
 				67FAB2F324946FC700413243 /* UIView+Farme.m in Sources */,
 				67FAB2E424946B9F00413243 /* ZYEssenceViewController.m in Sources */,
+				67FAB2F624947DF600413243 /* UIImage+ZYRender.m in Sources */,
 				67FAB2F024946C8000413243 /* ZYFriendViewController.m in Sources */,
 				67FAB2D62493C0E500413243 /* ZYNetworkTool.m in Sources */,
 			);
