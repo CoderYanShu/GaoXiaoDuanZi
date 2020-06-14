@@ -17,8 +17,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   //导航条的内容由栈顶控制器 navigationItem 来决定
+    //设置导航条
+    [self setUpNavigationItem];
+   
+}
+
+#pragma mark- 设置导航条
+- (void)setUpNavigationItem {
+    //导航条的内容由栈顶控制器 navigationItem 来决定
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
+    //设置 左侧按钮 item
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithNormalImage:@"MainTagSubIcon" highlightImage:@"MainTagSubIconClick" target:self action:@selector(subIconClick)];
+}
+
+#pragma mark- 导航条左侧按钮点击
+- (void)subIconClick {
+    UIViewController *vc = [[UIViewController alloc] init];
+    vc.view.backgroundColor = UIColor.blueColor;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - Table view data source
@@ -42,49 +58,4 @@
     return cell;
 }
 */
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

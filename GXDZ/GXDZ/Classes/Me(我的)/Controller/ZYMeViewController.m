@@ -7,7 +7,6 @@
 //
 
 #import "ZYMeViewController.h"
-#import "UIBarButtonItem+ZYItem.h"
 #import "ZYSettingViewController.h"
 
 @interface ZYMeViewController ()

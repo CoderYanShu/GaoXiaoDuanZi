@@ -7,7 +7,6 @@
 //
 
 #import "ZYFriendViewController.h"
-#import "UIBarButtonItem+ZYItem.h"
 
 
 @interface ZYFriendViewController ()

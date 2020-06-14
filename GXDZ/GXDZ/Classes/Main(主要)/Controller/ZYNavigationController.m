@@ -5,15 +5,21 @@
 //  Created by ZYP OnTheRoad on 2020/6/13.
 //  Copyright © 2020 ZYP OnTheRoad. All rights reserved.
 //
-
+/**
+覆盖系统返回按钮,系统滑动返回功能失效
+解决方法:
+1.成为 交互式弹出手势识别器 的代理
+2.在导航控制器的子控制器数大于1时,接收手势识别器。
+*/
 #import "ZYNavigationController.h"
 
-@interface ZYNavigationController ()
+@interface ZYNavigationController ()<UIGestureRecognizerDelegate>
 
 @end
 
 @implementation ZYNavigationController
 
+#pragma mark- 重写 initialize 在该方法中设置导航条
 //获取全局的(整个应用程序)导航条
 //凡是使用到UINavigationBar的地方全部设置以下属性 (背景,颜色)
 //UINavigationBar *bar = [UINavigationBar appearance];
@@ -33,12 +39,17 @@
 }
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
     
+    //成为 交互式弹出手势识别器 的代理
+    self.interactivePopGestureRecognizer.delegate = self;
 }
 
-#pragma mark- 重写 pushViewController
-//
+#pragma mark- UIGestureRecognizerDelegate
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    
+    return self.childViewControllers.count > 1;
+}
+#pragma mark- 重写 pushViewController 在该方法中添加非根控制器的导航条左侧返回按钮,隐藏屏幕底部的工具栏
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     
     //判断导航控制器是否有子控制器(子控制器是否是根控制器)
@@ -53,7 +64,7 @@
     [super pushViewController:viewController animated:animated];
 }
 
-
+#pragma mark- 设置导航条左侧添加返回按钮
 - (void)setUpNavigationBarBackButton:(UIViewController *)viewController {
     
     //自定义导航条右边视图并设置正常和高亮状态
@@ -77,6 +88,7 @@
     viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
 }
 
+#pragma mark- 导航条左侧返回按钮点击
 - (void)backClick {
     [self popViewControllerAnimated:YES];
 }
