@@ -6,10 +6,15 @@
 //  Copyright © 2020 ZYP OnTheRoad. All rights reserved.
 //
 /**
-覆盖系统返回按钮,系统滑动返回功能失效
-解决方法:
-1.成为 交互式弹出手势识别器 的代理
-2.在导航控制器的子控制器数大于1时,接收手势识别器。
+ 覆盖系统返回按钮,系统滑动返回功能失效
+ 恢复系统滑动返回功能,解决方法:
+ 1.成为 交互式弹出手势识别器 的代理
+ 2.在导航控制器的子控制器数大于1时,接收手势识别器。
+ 
+ 系统滑动返回功能
+ 手势   : self.interactivePopGestureRecognizer           UIScreenEdgePanGestureRecognizer
+ target: self.interactivePopGestureRecognizer.delegate  _UINavigationInteractiveTransition
+ action: handleNavigationTransition:
 */
 #import "ZYNavigationController.h"
 
@@ -39,9 +44,28 @@
 }
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
+   
+    //添加(自定义)弹出手势识别器
+    [self addPopGestureRecognizer];
     
-    //成为 交互式弹出手势识别器 的代理
-    self.interactivePopGestureRecognizer.delegate = self;
+}
+
+#pragma mark- 添加(自定义)弹出手势识别器
+- (void)addPopGestureRecognizer {
+    //不起用系统手势(交互式弹出手势识别器)
+    self.interactivePopGestureRecognizer.enabled = NO;
+
+    //系统的手势方法
+    SEL action = @selector(handleNavigationTransition:);
+    //系统的调用手势方法的目标
+    id target = self.interactivePopGestureRecognizer.delegate;
+    //创建手势
+    UIPanGestureRecognizer *panGR = [[UIPanGestureRecognizer alloc] initWithTarget: target action:action];
+    //设置代理
+    panGR.delegate = self;
+    //添加手势
+    [self.view addGestureRecognizer:panGR];
 }
 
 #pragma mark- UIGestureRecognizerDelegate
@@ -49,6 +73,7 @@
     
     return self.childViewControllers.count > 1;
 }
+
 #pragma mark- 重写 pushViewController 在该方法中添加非根控制器的导航条左侧返回按钮,隐藏屏幕底部的工具栏
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     
