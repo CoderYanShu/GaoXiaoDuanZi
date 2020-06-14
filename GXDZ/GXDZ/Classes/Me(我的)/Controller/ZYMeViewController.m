@@ -8,6 +8,7 @@
 
 #import "ZYMeViewController.h"
 #import "UIBarButtonItem+ZYItem.h"
+#import "ZYSettingViewController.h"
 
 @interface ZYMeViewController ()
 
@@ -37,8 +38,12 @@
     button.selected = !button.selected;
 }
 
+#pragma mark- 点击设置跳转到设置控制器
 - (void)settingClick {
+    //创建设置控制器
+    ZYSettingViewController *settingVC = [[ZYSettingViewController alloc] init];
     
+    [self.navigationController pushViewController:settingVC animated:YES];
 }
 #pragma mark - Table view data source
 

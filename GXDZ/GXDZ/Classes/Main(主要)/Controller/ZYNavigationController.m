@@ -37,5 +37,47 @@
     
 }
 
+#pragma mark- 重写 pushViewController
+//
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    
+    //判断导航控制器是否有子控制器(子控制器是否是根控制器)
+    if (self.childViewControllers.count) {// 非跟控制器
+        //1. 将视图控制器推到导航控制器上时隐藏屏幕底部的工具栏(一定在 push 之前)
+        viewController.hidesBottomBarWhenPushed = YES;
+        //2. 设置返回按钮
+        [self setUpNavigationBarBackButton:viewController];
+    }
+   
+    //保存系统做法
+    [super pushViewController:viewController animated:animated];
+}
 
+
+- (void)setUpNavigationBarBackButton:(UIViewController *)viewController {
+    
+    //自定义导航条右边视图并设置正常和高亮状态
+    UIButton *btn = [[UIButton alloc] init];
+    
+    [btn setTitle:@"返回" forState:UIControlStateNormal];
+    
+    //正常状态
+    [btn setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
+    [btn setImage: [UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];
+    
+    //高亮状态
+    [btn setTitleColor:UIColor.redColor forState:UIControlStateHighlighted];
+    [btn setImage: [UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateHighlighted];
+    
+    [btn addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
+    //按钮自适应大小.
+    [btn sizeToFit];
+    
+    //自定义导航条右边视图
+    viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+}
+
+- (void)backClick {
+    [self popViewControllerAnimated:YES];
+}
 @end

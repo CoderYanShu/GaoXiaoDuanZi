@@ -16,6 +16,7 @@
 		67D4707C2494F28E00B5D967 /* ZYLogOnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67D4707A2494F28E00B5D967 /* ZYLogOnViewController.xib */; };
 		67D4707F2494FC2B00B5D967 /* ZYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D4707E2494FC2B00B5D967 /* ZYNavigationController.m */; };
 		67D470852494FFF900B5D967 /* UIBarButtonItem+ZYItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D470842494FFF900B5D967 /* UIBarButtonItem+ZYItem.m */; };
+		67D4708824950AF200B5D967 /* ZYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D4708724950AF200B5D967 /* ZYSettingViewController.m */; };
 		67FAB2D62493C0E500413243 /* ZYNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FAB2D52493C0E500413243 /* ZYNetworkTool.m */; };
 		67FAB2DA2493C9BC00413243 /* ZYAdvertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FAB2D82493C9BC00413243 /* ZYAdvertController.m */; };
 		67FAB2DB2493C9BC00413243 /* ZYAdvertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67FAB2D92493C9BC00413243 /* ZYAdvertController.xib */; };
@@ -47,6 +48,8 @@
 		67D4707E2494FC2B00B5D967 /* ZYNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYNavigationController.m; sourceTree = "<group>"; };
 		67D470832494FFF900B5D967 /* UIBarButtonItem+ZYItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+ZYItem.h"; sourceTree = "<group>"; };
 		67D470842494FFF900B5D967 /* UIBarButtonItem+ZYItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+ZYItem.m"; sourceTree = "<group>"; };
+		67D4708624950AF200B5D967 /* ZYSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYSettingViewController.h; sourceTree = "<group>"; };
+		67D4708724950AF200B5D967 /* ZYSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYSettingViewController.m; sourceTree = "<group>"; };
 		67FAB2D42493C0E500413243 /* ZYNetworkTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYNetworkTool.h; sourceTree = "<group>"; };
 		67FAB2D52493C0E500413243 /* ZYNetworkTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYNetworkTool.m; sourceTree = "<group>"; };
 		67FAB2D72493C9BC00413243 /* ZYAdvertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYAdvertController.h; sourceTree = "<group>"; };
@@ -142,7 +145,7 @@
 				67AEAD302493A8E100A57CB0 /* Other(其他) */,
 				67AEAD382493A8E100A57CB0 /* Base(列表视图) */,
 				67AEAD3C2493A8E100A57CB0 /* Main(主要) */,
-				67AEAD402493A8E100A57CB0 /* Me(我) */,
+				67AEAD402493A8E100A57CB0 /* Me(我的) */,
 				67AEAD442493A8E100A57CB0 /* Publish(发布) */,
 			);
 			path = Classes;
@@ -227,6 +230,8 @@
 		67AEAD252493A8E100A57CB0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				67D4708624950AF200B5D967 /* ZYSettingViewController.h */,
+				67D4708724950AF200B5D967 /* ZYSettingViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -424,14 +429,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		67AEAD402493A8E100A57CB0 /* Me(我) */ = {
+		67AEAD402493A8E100A57CB0 /* Me(我的) */ = {
 			isa = PBXGroup;
 			children = (
 				67AEAD412493A8E100A57CB0 /* Controller */,
 				67AEAD422493A8E100A57CB0 /* Model */,
 				67AEAD432493A8E100A57CB0 /* View */,
 			);
-			path = "Me(我)";
+			path = "Me(我的)";
 			sourceTree = "<group>";
 		};
 		67AEAD412493A8E100A57CB0 /* Controller */ = {
@@ -659,6 +664,7 @@
 				67FAB2DE2493CEDD00413243 /* ZYTabBarController.m in Sources */,
 				67FAB2E724946BE000413243 /* ZYPublishViewController.m in Sources */,
 				67D4707F2494FC2B00B5D967 /* ZYNavigationController.m in Sources */,
+				67D4708824950AF200B5D967 /* ZYSettingViewController.m in Sources */,
 				67FAB2EA24946C0E00413243 /* ZYMeViewController.m in Sources */,
 				67FAB2F324946FC700413243 /* UIView+Farme.m in Sources */,
 				67FAB2E424946B9F00413243 /* ZYEssenceViewController.m in Sources */,
