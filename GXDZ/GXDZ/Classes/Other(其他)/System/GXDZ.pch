@@ -11,7 +11,12 @@
 
 #import "UIView+Farme.h"
 #import <SDWebImage.h>
-#import "ZYNetworkTool.h"
+#import <AFNetworking.h>
 #import "UIBarButtonItem+ZYItem.h"
+
+#define kURL_STRING @"http://api.budejie.com/api/api_open.php"
+
+#define kSCREEN_HEIGHT (NSInteger)UIScreen.mainScreen.bounds.size.height
+#define kSCREEN_WIDTH (NSInteger)UIScreen.mainScreen.bounds.size.width
 
 #endif 

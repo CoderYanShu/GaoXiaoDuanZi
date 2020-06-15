@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZYAdvertController">
             <connections>
-                <outlet property="advertView" destination="iHL-AN-NzL" id="u3I-Ur-Zh6"/>
+                <outlet property="advertView" destination="Bh5-5X-5h0" id="3Ku-a8-JLf"/>
                 <outlet property="jumpButton" destination="bu9-Vj-psP" id="GVy-P2-IyO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,9 +24,21 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iHL-AN-NzL">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="746"/>
-                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Pf-h8-TZu">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bh5-5X-5h0">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="746"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Bh5-5X-5h0" firstAttribute="top" secondItem="0Pf-h8-TZu" secondAttribute="top" id="Epd-jc-SBe"/>
+                        <constraint firstItem="Bh5-5X-5h0" firstAttribute="leading" secondItem="0Pf-h8-TZu" secondAttribute="leading" id="N61-dK-m6k"/>
+                        <constraint firstAttribute="bottom" secondItem="Bh5-5X-5h0" secondAttribute="bottom" constant="150" id="XGk-p8-L74"/>
+                        <constraint firstAttribute="trailing" secondItem="Bh5-5X-5h0" secondAttribute="trailing" id="kHt-vc-MfM"/>
+                    </constraints>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bu9-Vj-psP">
                     <rect key="frame" x="334" y="44" width="60" height="30"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.51430518483078169" colorSpace="custom" customColorSpace="displayP3"/>
@@ -42,18 +54,18 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="iHL-AN-NzL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8F3-94-VRs"/>
-                <constraint firstAttribute="bottom" secondItem="iHL-AN-NzL" secondAttribute="bottom" constant="150" id="PMQ-AT-zya"/>
-                <constraint firstItem="bu9-Vj-psP" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="Riw-RH-dy6"/>
-                <constraint firstItem="iHL-AN-NzL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="k0r-m3-dpo"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="bu9-Vj-psP" secondAttribute="trailing" constant="20" id="vNd-W5-9NV"/>
-                <constraint firstAttribute="trailing" secondItem="iHL-AN-NzL" secondAttribute="trailing" id="w9K-f5-krz"/>
+                <constraint firstItem="bu9-Vj-psP" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="0w0-Zb-33d"/>
+                <constraint firstItem="0Pf-h8-TZu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8dx-ng-H5k"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="bu9-Vj-psP" secondAttribute="trailing" constant="20" id="9vY-E1-BZN"/>
+                <constraint firstItem="0Pf-h8-TZu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Dai-zp-uGn"/>
+                <constraint firstAttribute="trailing" secondItem="0Pf-h8-TZu" secondAttribute="trailing" id="LET-Vr-dHu"/>
+                <constraint firstAttribute="bottom" secondItem="0Pf-h8-TZu" secondAttribute="bottom" id="gEP-pw-prA"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </view>
     </objects>
     <resources>
-        <image name="Launch" width="320" height="568"/>
+        <image name="Launch" width="750" height="1334"/>
     </resources>
 </document>

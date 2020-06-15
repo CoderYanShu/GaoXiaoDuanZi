@@ -7,6 +7,7 @@
 //
 
 #import "ZYNewViewController.h"
+#import "ZYSubTagViewController.h"
 
 @interface ZYNewViewController ()
 
@@ -32,9 +33,9 @@
 
 #pragma mark- 导航条左侧按钮点击
 - (void)subIconClick {
-    UIViewController *vc = [[UIViewController alloc] init];
-    vc.view.backgroundColor = UIColor.blueColor;
-    [self.navigationController pushViewController:vc animated:YES];
+    ZYSubTagViewController *subTagVC = [[ZYSubTagViewController alloc] init];
+    
+    [self.navigationController pushViewController:subTagVC animated:YES];
 }
 
 #pragma mark - Table view data source

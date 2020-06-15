@@ -70,7 +70,7 @@
 
 #pragma mark- UIGestureRecognizerDelegate
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-    
+    //当导航控制器的子控制器为非根控制器是 响应手势
     return self.childViewControllers.count > 1;
 }
 

@@ -9,7 +9,7 @@
 #import "ZYAdvertController.h"
 #import "ZYTabBarController.h"
 #import "ZYAdvertItem.h"
-
+#import "ZYNetworkTool.h"
 
 @interface ZYAdvertController ()
 
@@ -22,6 +22,8 @@
 /// 广告模型
 @property (nonatomic, strong) ZYAdvertItem *advertItem;
 
+@property (nonatomic ,strong) AFHTTPSessionManager *manager;
+
 @end
 
 @implementation ZYAdvertController
@@ -33,7 +35,7 @@
     [self setUp];
     
     //加载广告数据
-    [self getAdvertData];
+    [self loadData];
 }
 
 #pragma mark- 初始化设置
@@ -81,11 +83,10 @@
         NSDictionary *dict = [NSDictionary dictionary];
         [UIApplication.sharedApplication openURL:url options:dict completionHandler:nil];
     }
-    
 }
 
 #pragma mark- 加载广告数据
-- (void)getAdvertData {
+- (void)loadData {
     
     NSString *url = @"http://dspsdk.spriteapp.com/get";
     
@@ -93,9 +94,10 @@
 
     params[@"ad"] = @"self.baisibudejieHD.iphone.splash.18110717002";
     
-    [ZYNetworkTool rquestWithType:ZYRequestTypeGet url:url params:params success:^(id result) {
+    _manager = AFHTTPSessionManager.manager;
+    [_manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        NSDictionary *dict = result[@"body"];
+        NSDictionary *dict = responseObject[@"body"];
         dict = dict[@"data"];
         dict = dict[@"sdk.gdt.splash.iphone.HD-banping.193.109.1150.2891"];
         
@@ -105,11 +107,9 @@
         //设置广告图片
         [self.advertView sd_setImageWithURL: [NSURL URLWithString: self.advertItem.pic]];
         
-    } failure:^(NSError *error) {
-        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@",error.localizedDescription);
     }];
-    
 }
 
 #pragma mark- 跳转到 app 主控制器
@@ -124,5 +124,13 @@
     
     //设置 App rootViewController 为主控制器
     UIApplication.sharedApplication.keyWindow.rootViewController = tabBarVC;
+}
+
+#pragma mark- 视图已经消失
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    //取消请求
+    [_manager.tasks makeObjectsPerformSelector:@selector(cancel)];
 }
 @end
