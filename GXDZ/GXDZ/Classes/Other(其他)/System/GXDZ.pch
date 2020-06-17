@@ -19,6 +19,7 @@
 
 #define kSCREEN_WIDTH (NSInteger)UIScreen.mainScreen.bounds.size.width
 #define kSCREEN_HEIGHT (NSInteger)UIScreen.mainScreen.bounds.size.height
+#define kNAIGATION_BAR_HEIGHT self.navigationController.navigationBar.height
 #define kSTATUS_BAR_HEIGHT UIApplication.sharedApplication.statusBarFrame.size.height
 
 #endif 

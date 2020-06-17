@@ -99,7 +99,7 @@
     ZYFriendViewController *friendVC = [[ZYFriendViewController alloc] init];
     ZYNavigationController *navFriendVC = [[ZYNavigationController alloc] initWithRootViewController:friendVC];
     
-    //我
+    //我的
     ZYMeViewController *meVC = [[ZYMeViewController alloc] init];
     ZYNavigationController *navMeVC = [[ZYNavigationController alloc] initWithRootViewController:meVC];
     

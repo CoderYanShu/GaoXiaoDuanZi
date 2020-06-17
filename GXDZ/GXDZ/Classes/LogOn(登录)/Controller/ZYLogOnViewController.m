@@ -69,6 +69,26 @@
     [self setUpSubviews];
     
     [self setUpSwipeGesture];
+    
+    //有导航条,隐藏 topBar, 设置 NavigationItem
+    if (self.navigationController) {
+         self.topBar.hidden = YES;
+        [self setUpNavigationItem];
+    }
+}
+
+#pragma mark- 设置导航条 Item
+- (void)setUpNavigationItem {
+    
+    self.navigationItem.title = @"登录/注册";
+    
+    UIButton *registerButton = [[UIButton alloc] init];
+    [registerButton setTitle:@"注册账号" forState:UIControlStateNormal];
+    [registerButton setTitle:@"已有账号" forState:UIControlStateSelected];
+    [registerButton setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
+    [registerButton addTarget:self action:@selector(registerButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [registerButton sizeToFit];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:registerButton];
 }
 
 #pragma mark- 监听视图点击(点击结束编辑)
@@ -84,9 +104,15 @@
     }];
     
     [self.topBar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.offset(kSTATUS_BAR_HEIGHT + 20);
+       
         make.left.right.equalTo(self.view);
         make.height.equalTo(@40);
+        if (kNAIGATION_BAR_HEIGHT) {
+             make.top.offset(kSTATUS_BAR_HEIGHT + kNAIGATION_BAR_HEIGHT + 0);
+        }
+        else {
+             make.top.offset(kSTATUS_BAR_HEIGHT + 0);
+        }
     }];
     
     [self.middleBar mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -103,23 +129,17 @@
     }];
 }
 
-#pragma mark- 设置轻扫手势
-- (void)setUpSwipeGesture {
+#pragma mark- 点击注册按钮
+- (void)registerButtonClick:(UIButton *)button {
     
-    UISwipeGestureRecognizer *swipeGR = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(topBarDidClickDismissButton)];
-    //设置轻扫的方向, 一个轻扫手势只能对应一个方向
-    swipeGR.direction = UISwipeGestureRecognizerDirectionDown;
-    [self.view addGestureRecognizer:swipeGR];
+    button.selected = !button.selected;
+    
+    [self loginRegistrationToggle:button];
 }
 
-#pragma mark- ZYTopBarDelegate
-- (void)topBarDidClickDismissButton {
-    
-     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)topBarDidClickRegisterButton:(UIButton *)button {
-    
+#pragma mark- 切换 登录/注册 输入框
+- (void)loginRegistrationToggle:(UIButton *)button {
+        
     [self.middleBar mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.topBar.mas_bottom).offset(60);
         make.width.equalTo(self.view).multipliedBy(2);
@@ -134,7 +154,24 @@
     [UIView animateWithDuration:0.1 animations:^{
         [self.view layoutIfNeeded];
     }];
+}
+#pragma mark- 设置轻扫手势
+- (void)setUpSwipeGesture {
     
+    UISwipeGestureRecognizer *swipeGR = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(topBarDidClickDismissButton)];
+    //设置轻扫的方向, 一个轻扫手势只能对应一个方向
+    swipeGR.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.view addGestureRecognizer:swipeGR];
+}
+
+#pragma mark- ZYTopBarDelegate
+- (void)topBarDidClickDismissButton {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)topBarDidClickRegisterButton:(UIButton *)button {
+    
+    [self loginRegistrationToggle:button];
 }
 
 #pragma mark- ZYBottomBarDelegate

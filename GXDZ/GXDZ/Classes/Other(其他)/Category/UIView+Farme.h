@@ -12,12 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (Farme)
 
-@property (nonatomic ,assign) CGFloat x;
-@property (nonatomic ,assign) CGFloat y;
-@property (nonatomic ,assign) CGFloat width;
-@property (nonatomic ,assign) CGFloat height;
-@property (nonatomic ,assign) CGFloat centerX;
-@property (nonatomic ,assign) CGFloat centerY;
+@property  CGFloat x;
+@property  CGFloat y;
+@property  CGFloat width;
+@property  CGFloat height;
+@property  CGFloat centerX;
+@property  CGFloat centerY;
 
 @end
 
