@@ -7,6 +7,8 @@
 //
 
 #import "ZYSettingViewController.h"
+#import <SVProgressHUD.h>
+
 
 @interface ZYSettingViewController ()
 
@@ -19,6 +21,12 @@
     
     [self setUpNavigationItem];
     
+    [self setUpGroup0];
+    
+    [self setUpGroup1];
+    
+    [self setUpGroup2];
+    
 }
 
 - (void)setUpNavigationItem {
@@ -26,70 +34,97 @@
     self.navigationItem.title = @"设置";
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+- (void)clearDisk {
+    if (!SDImageCache.sharedImageCache.totalDiskSize) {
+        [SVProgressHUD showInfoWithStatus:@"缓存已清空"];
+        return;
+    }
+    [SVProgressHUD showWithStatus:@"正在清除缓存..."];
+    [SDImageCache.sharedImageCache clearDiskOnCompletion:^{
+        [SVProgressHUD showSuccessWithStatus:@"清空成功"];
+        
+    }];
 }
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+#pragma mark- 获取缓存
+- (NSString *)totalDiskSize {
     
-    // Configure the cell...
+    NSInteger totalSize = SDImageCache.sharedImageCache.totalDiskSize;
+    CGFloat sizeFloat = 0;
+    NSString *sizeString = nil;
+    if (totalSize > 1000 * 1000) {
+        sizeFloat = totalSize / 1000.0 / 1000.0;
+        sizeString = [NSString stringWithFormat:@"%.2fMB",sizeFloat];
+    }
+    else if (totalSize > 1000) {
+        sizeFloat = totalSize / 1000.0;
+        sizeString = [NSString stringWithFormat:@"%.2fKB",sizeFloat];
+    }
+    else if (totalSize >= 0) {
+        sizeString = [NSString stringWithFormat:@"%.2fKB",totalSize * 1.0];
+    }
+    return sizeString;
+}
+
+- (void)setUpGroup0 {
     
-    return cell;
+    ZYRowItem *item = [ZYRowItem rowItemWithImage:nil title:@"清除缓存"];
+    
+    item.subTitle = [self totalDiskSize];
+    
+    //    item.selectRowTask = ^{
+    //        [self clearDisk];
+    //    };
+   
+    ZYGroupItem *group = [ZYGroupItem groupItemWithRowItems: @[item]];
+    
+    [self.groups addObject:group];
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)setUpGroup1 {
+    
+    ZYArrowItem *morePush = [ZYArrowItem rowItemWithImage:[UIImage imageNamed:@"MorePush"] title:@"推送和提醒"];
+    
+    ZYSwitchItem *homeshake = [ZYSwitchItem rowItemWithImage:[UIImage imageNamed:@"more_homeshake"] title:@"使用摇一摇机选"];
+    
+    ZYSwitchItem *sound = [ZYSwitchItem rowItemWithImage:[UIImage imageNamed:@"sound_Effect"] title:@"声音效果"];
+    
+    ZYSwitchItem *recommend = [ZYSwitchItem rowItemWithImage:[UIImage imageNamed:@"More_LotteryRecommend"] title:@"购彩小助手"];
+
+    ZYGroupItem *group1 = [ZYGroupItem groupItemWithRowItems: @[morePush, homeshake, sound, recommend]];
+    
+    [self.groups addObject:group1];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)setUpGroup2 {
+    
+    ZYArrowItem *item = [ZYArrowItem rowItemWithImage:[UIImage imageNamed:@"RedeemCode"] title:@"检查新版本"];
+    
+    item.selectRowTask = ^{
+        [SVProgressHUD showInfoWithStatus:@"当前没有最新版本"];
+    };
+    
+    ZYArrowItem *share = [ZYArrowItem rowItemWithImage:[UIImage imageNamed:@"MoreShare"] title:@"分享"];
+
+    ZYArrowItem *netsease = [ZYArrowItem rowItemWithImage:[UIImage imageNamed:@"MoreNetease"] title:@"产品推荐"];
+    
+    ZYArrowItem *about = [ZYArrowItem rowItemWithImage:[UIImage imageNamed:@"MoreAbout"] title:@"关于"];
+
+    ZYGroupItem *group2 = [ZYGroupItem groupItemWithRowItems:@[item, share, netsease, about]];
+    
+    [self.groups addObject:group2];
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //判断是否是清除缓存行
+    if (indexPath.section == 0) {
+        //清除缓存
+        [self clearDisk];
+        ZYGroupItem *groupItem = self.groups[indexPath.section];
+        ZYRowItem *rowItem  = groupItem.rowItems[indexPath.row];
+        
+        rowItem.subTitle = [self totalDiskSize];
+        [self.tableView reloadData];
+    }
+    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

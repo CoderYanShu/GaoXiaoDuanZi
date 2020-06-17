@@ -6,11 +6,11 @@
 //  Copyright © 2020 ZYP OnTheRoad. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ZYSettingBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZYSettingViewController : UITableViewController
+@interface ZYSettingViewController : ZYSettingBaseViewController
 
 @end
 

@@ -35,7 +35,7 @@
     if (!_registerButton) {
         _registerButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_registerButton setTitle:@"注册账号" forState:UIControlStateNormal];
-        [_registerButton setTitle:@"已有账号?" forState:UIControlStateSelected];
+        [_registerButton setTitle:@"已有账号" forState:UIControlStateSelected];
         [_registerButton addTarget:self action:@selector(registerButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [_registerButton sizeToFit];
         [self addSubview:_registerButton];

@@ -13,6 +13,7 @@
 #import "ZYLogOnViewController.h"
 #import "ZYSquareItem.h"
 #import <SafariServices/SafariServices.h>
+#import <WebKit/WebKit.h>
 
 static NSString *const tableID = @"tableCell";
 static NSString *const footerID = @"footerCell";
@@ -223,14 +224,19 @@ static NSString *const footerID = @"footerCell";
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    ZYSquareItem *item = self.squareItems[indexPath.row];
+//    ZYSquareItem *item = self.squareItems[indexPath.row];
     
+//    ZYWebViewController *webVC = [[ZYWebViewController alloc] init];
+//
+//    webVC.url = [NSURL URLWithString:item.url];
+//
+//    [self.navigationController pushViewController:webVC animated:YES];
    
-    SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:item.url]];
-    if (@available(iOS 11.0, *)) {
-        safariVC.dismissButtonStyle = SFSafariViewControllerDismissButtonStyleCancel;
-    } 
-    
-    [self presentViewController:safariVC animated:YES completion:nil];
+//    SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:item.url]];
+//    if (@available(iOS 11.0, *)) {
+//        safariVC.dismissButtonStyle = SFSafariViewControllerDismissButtonStyleCancel;
+//    }
+//
+//    [self presentViewController:safariVC animated:YES completion:nil];
 }
 @end

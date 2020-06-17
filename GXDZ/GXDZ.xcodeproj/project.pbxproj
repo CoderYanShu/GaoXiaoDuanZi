@@ -24,6 +24,12 @@
 		671C48E92499CDF0007E7E60 /* ZYCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C48E82499CDF0007E7E60 /* ZYCollectionView.m */; };
 		671C48EC2499DA20007E7E60 /* ZYSquareItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C48EB2499DA20007E7E60 /* ZYSquareItem.m */; };
 		671C48EF2499DDA4007E7E60 /* ZYFooterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C48EE2499DDA4007E7E60 /* ZYFooterCell.m */; };
+		671C48F7249A51C3007E7E60 /* ZYSettingBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C48F6249A51C3007E7E60 /* ZYSettingBaseViewController.m */; };
+		671C4900249A52A9007E7E60 /* ZYArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C48F8249A52A9007E7E60 /* ZYArrowItem.m */; };
+		671C4901249A52A9007E7E60 /* ZYSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C48F9249A52A9007E7E60 /* ZYSwitchItem.m */; };
+		671C4902249A52A9007E7E60 /* ZYGroupItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C48FA249A52A9007E7E60 /* ZYGroupItem.m */; };
+		671C4903249A52A9007E7E60 /* ZYRowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C48FB249A52A9007E7E60 /* ZYRowItem.m */; };
+		671C4906249A5319007E7E60 /* ZYSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C4905249A5319007E7E60 /* ZYSettingCell.m */; };
 		67AEAD4C2493A8E100A57CB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AEAD342493A8E100A57CB0 /* main.m */; };
 		67AEAD4D2493A8E100A57CB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AEAD352493A8E100A57CB0 /* AppDelegate.m */; };
 		67AEAD4F2493A8E100A57CB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67AEAD492493A8E100A57CB0 /* Assets.xcassets */; };
@@ -86,6 +92,18 @@
 		671C48EB2499DA20007E7E60 /* ZYSquareItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYSquareItem.m; sourceTree = "<group>"; };
 		671C48ED2499DDA4007E7E60 /* ZYFooterCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYFooterCell.h; sourceTree = "<group>"; };
 		671C48EE2499DDA4007E7E60 /* ZYFooterCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYFooterCell.m; sourceTree = "<group>"; };
+		671C48F5249A51C3007E7E60 /* ZYSettingBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYSettingBaseViewController.h; sourceTree = "<group>"; };
+		671C48F6249A51C3007E7E60 /* ZYSettingBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYSettingBaseViewController.m; sourceTree = "<group>"; };
+		671C48F8249A52A9007E7E60 /* ZYArrowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYArrowItem.m; sourceTree = "<group>"; };
+		671C48F9249A52A9007E7E60 /* ZYSwitchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYSwitchItem.m; sourceTree = "<group>"; };
+		671C48FA249A52A9007E7E60 /* ZYGroupItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYGroupItem.m; sourceTree = "<group>"; };
+		671C48FB249A52A9007E7E60 /* ZYRowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYRowItem.m; sourceTree = "<group>"; };
+		671C48FC249A52A9007E7E60 /* ZYRowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYRowItem.h; sourceTree = "<group>"; };
+		671C48FD249A52A9007E7E60 /* ZYGroupItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYGroupItem.h; sourceTree = "<group>"; };
+		671C48FE249A52A9007E7E60 /* ZYArrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYArrowItem.h; sourceTree = "<group>"; };
+		671C48FF249A52A9007E7E60 /* ZYSwitchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYSwitchItem.h; sourceTree = "<group>"; };
+		671C4904249A5319007E7E60 /* ZYSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYSettingCell.h; sourceTree = "<group>"; };
+		671C4905249A5319007E7E60 /* ZYSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYSettingCell.m; sourceTree = "<group>"; };
 		67AEACFF2493A65900A57CB0 /* 搞笑段子.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "搞笑段子.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67AEAD332493A8E100A57CB0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		67AEAD342493A8E100A57CB0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -292,6 +310,8 @@
 			children = (
 				67D4708624950AF200B5D967 /* ZYSettingViewController.h */,
 				67D4708724950AF200B5D967 /* ZYSettingViewController.m */,
+				671C48F5249A51C3007E7E60 /* ZYSettingBaseViewController.h */,
+				671C48F6249A51C3007E7E60 /* ZYSettingBaseViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -299,6 +319,14 @@
 		67AEAD262493A8E100A57CB0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				671C48FE249A52A9007E7E60 /* ZYArrowItem.h */,
+				671C48F8249A52A9007E7E60 /* ZYArrowItem.m */,
+				671C48FD249A52A9007E7E60 /* ZYGroupItem.h */,
+				671C48FA249A52A9007E7E60 /* ZYGroupItem.m */,
+				671C48FC249A52A9007E7E60 /* ZYRowItem.h */,
+				671C48FB249A52A9007E7E60 /* ZYRowItem.m */,
+				671C48FF249A52A9007E7E60 /* ZYSwitchItem.h */,
+				671C48F9249A52A9007E7E60 /* ZYSwitchItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -306,6 +334,8 @@
 		67AEAD272493A8E100A57CB0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				671C4904249A5319007E7E60 /* ZYSettingCell.h */,
+				671C4905249A5319007E7E60 /* ZYSettingCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -776,16 +806,19 @@
 				671C48EF2499DDA4007E7E60 /* ZYFooterCell.m in Sources */,
 				671C48C02497CB86007E7E60 /* ZYTopBar.m in Sources */,
 				671C48E02498D843007E7E60 /* ZYLogOnViewController.m in Sources */,
+				671C4900249A52A9007E7E60 /* ZYArrowItem.m in Sources */,
 				671C48E62499058B007E7E60 /* UITextField+ZYPlaceholderColor.m in Sources */,
 				67FAB2ED24946C3B00413243 /* ZYNewViewController.m in Sources */,
 				67AEAD4D2493A8E100A57CB0 /* AppDelegate.m in Sources */,
 				671C48CF2497CD6C007E7E60 /* ZYBottomBar.m in Sources */,
 				67AEAD4C2493A8E100A57CB0 /* main.m in Sources */,
 				67FAB2DE2493CEDD00413243 /* ZYTabBarController.m in Sources */,
+				671C4903249A52A9007E7E60 /* ZYRowItem.m in Sources */,
 				67FAB2E724946BE000413243 /* ZYPublishViewController.m in Sources */,
 				671C48CC2497CD34007E7E60 /* ZYMiddleBar.m in Sources */,
 				67D4707F2494FC2B00B5D967 /* ZYNavigationController.m in Sources */,
 				67D4708824950AF200B5D967 /* ZYSettingViewController.m in Sources */,
+				671C48F7249A51C3007E7E60 /* ZYSettingBaseViewController.m in Sources */,
 				671C48BD24972FF4007E7E60 /* ZYSubTagCell.m in Sources */,
 				67FAB2EA24946C0E00413243 /* ZYMeViewController.m in Sources */,
 				67D4709A24965F1500B5D967 /* ZYSubTagViewController.m in Sources */,
@@ -794,9 +827,12 @@
 				671C48BA24972D57007E7E60 /* ZYSubTagItem.m in Sources */,
 				67FAB2E424946B9F00413243 /* ZYEssenceViewController.m in Sources */,
 				67FAB2F624947DF600413243 /* UIImage+ZYRender.m in Sources */,
+				671C4901249A52A9007E7E60 /* ZYSwitchItem.m in Sources */,
 				671C48D82498BC83007E7E60 /* ZYLoginRegisterView.m in Sources */,
+				671C4902249A52A9007E7E60 /* ZYGroupItem.m in Sources */,
 				67FAB2F024946C8000413243 /* ZYFriendViewController.m in Sources */,
 				671C48EC2499DA20007E7E60 /* ZYSquareItem.m in Sources */,
+				671C4906249A5319007E7E60 /* ZYSettingCell.m in Sources */,
 				67D470852494FFF900B5D967 /* UIBarButtonItem+ZYItem.m in Sources */,
 				67FAB2D62493C0E500413243 /* ZYNetworkTool.m in Sources */,
 				671C48E92499CDF0007E7E60 /* ZYCollectionView.m in Sources */,
