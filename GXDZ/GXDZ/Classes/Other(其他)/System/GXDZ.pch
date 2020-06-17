@@ -9,14 +9,16 @@
 #ifndef GXDZ_pch
 #define GXDZ_pch
 
-#import "UIView+Farme.h"
+#import <Masonry.h>
 #import <SDWebImage.h>
 #import <AFNetworking.h>
+#import "UIView+Farme.h"
 #import "UIBarButtonItem+ZYItem.h"
 
 #define kURL_STRING @"http://api.budejie.com/api/api_open.php"
 
-#define kSCREEN_HEIGHT (NSInteger)UIScreen.mainScreen.bounds.size.height
 #define kSCREEN_WIDTH (NSInteger)UIScreen.mainScreen.bounds.size.width
+#define kSCREEN_HEIGHT (NSInteger)UIScreen.mainScreen.bounds.size.height
+#define kSTATUS_BAR_HEIGHT UIApplication.sharedApplication.statusBarFrame.size.height
 
 #endif 

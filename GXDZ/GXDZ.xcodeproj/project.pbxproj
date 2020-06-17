@@ -10,12 +10,21 @@
 		5FBE369504FAB6A8400DD241 /* Pods_GXDZ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A42F9E350AA40E2FB32990EA /* Pods_GXDZ.framework */; };
 		671C48BA24972D57007E7E60 /* ZYSubTagItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C48B924972D57007E7E60 /* ZYSubTagItem.m */; };
 		671C48BD24972FF4007E7E60 /* ZYSubTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C48BC24972FF4007E7E60 /* ZYSubTagCell.m */; };
+		671C48C02497CB86007E7E60 /* ZYTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C48BF2497CB86007E7E60 /* ZYTopBar.m */; };
+		671C48CC2497CD34007E7E60 /* ZYMiddleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C48CB2497CD34007E7E60 /* ZYMiddleBar.m */; };
+		671C48CF2497CD6C007E7E60 /* ZYBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C48CE2497CD6C007E7E60 /* ZYBottomBar.m */; };
+		671C48D224987DC1007E7E60 /* ZYQuickLogonButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C48D124987DC1007E7E60 /* ZYQuickLogonButton.m */; };
+		671C48D52498B492007E7E60 /* UIImage+ZYRevised.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C48D42498B492007E7E60 /* UIImage+ZYRevised.m */; };
+		671C48D82498BC83007E7E60 /* ZYLoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C48D72498BC83007E7E60 /* ZYLoginRegisterView.m */; };
+		671C48DB2498BECF007E7E60 /* ZYLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C48DA2498BECF007E7E60 /* ZYLoginView.m */; };
+		671C48DE2498BF5F007E7E60 /* ZYRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C48DD2498BF5F007E7E60 /* ZYRegisterView.m */; };
+		671C48E02498D843007E7E60 /* ZYLogOnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C48DF2498D843007E7E60 /* ZYLogOnViewController.m */; };
+		671C48E32498E8D1007E7E60 /* ZYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C48E22498E8D1007E7E60 /* ZYTextField.m */; };
+		671C48E62499058B007E7E60 /* UITextField+ZYPlaceholderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C48E52499058B007E7E60 /* UITextField+ZYPlaceholderColor.m */; };
 		67AEAD4C2493A8E100A57CB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AEAD342493A8E100A57CB0 /* main.m */; };
 		67AEAD4D2493A8E100A57CB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AEAD352493A8E100A57CB0 /* AppDelegate.m */; };
 		67AEAD4F2493A8E100A57CB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67AEAD492493A8E100A57CB0 /* Assets.xcassets */; };
 		67AEAD502493A8E100A57CB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AEAD4A2493A8E100A57CB0 /* LaunchScreen.storyboard */; };
-		67D4707B2494F28E00B5D967 /* ZYLogOnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D470792494F28E00B5D967 /* ZYLogOnViewController.m */; };
-		67D4707C2494F28E00B5D967 /* ZYLogOnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67D4707A2494F28E00B5D967 /* ZYLogOnViewController.xib */; };
 		67D4707F2494FC2B00B5D967 /* ZYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D4707E2494FC2B00B5D967 /* ZYNavigationController.m */; };
 		67D470852494FFF900B5D967 /* UIBarButtonItem+ZYItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D470842494FFF900B5D967 /* UIBarButtonItem+ZYItem.m */; };
 		67D4708824950AF200B5D967 /* ZYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D4708724950AF200B5D967 /* ZYSettingViewController.m */; };
@@ -47,6 +56,27 @@
 		671C48B924972D57007E7E60 /* ZYSubTagItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYSubTagItem.m; sourceTree = "<group>"; };
 		671C48BB24972FF4007E7E60 /* ZYSubTagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYSubTagCell.h; sourceTree = "<group>"; };
 		671C48BC24972FF4007E7E60 /* ZYSubTagCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYSubTagCell.m; sourceTree = "<group>"; };
+		671C48BE2497CB86007E7E60 /* ZYTopBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYTopBar.h; sourceTree = "<group>"; };
+		671C48BF2497CB86007E7E60 /* ZYTopBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYTopBar.m; sourceTree = "<group>"; };
+		671C48CA2497CD34007E7E60 /* ZYMiddleBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYMiddleBar.h; sourceTree = "<group>"; };
+		671C48CB2497CD34007E7E60 /* ZYMiddleBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYMiddleBar.m; sourceTree = "<group>"; };
+		671C48CD2497CD6C007E7E60 /* ZYBottomBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYBottomBar.h; sourceTree = "<group>"; };
+		671C48CE2497CD6C007E7E60 /* ZYBottomBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYBottomBar.m; sourceTree = "<group>"; };
+		671C48D024987DC1007E7E60 /* ZYQuickLogonButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYQuickLogonButton.h; sourceTree = "<group>"; };
+		671C48D124987DC1007E7E60 /* ZYQuickLogonButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYQuickLogonButton.m; sourceTree = "<group>"; };
+		671C48D32498B492007E7E60 /* UIImage+ZYRevised.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZYRevised.h"; sourceTree = "<group>"; };
+		671C48D42498B492007E7E60 /* UIImage+ZYRevised.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZYRevised.m"; sourceTree = "<group>"; };
+		671C48D62498BC83007E7E60 /* ZYLoginRegisterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYLoginRegisterView.h; sourceTree = "<group>"; };
+		671C48D72498BC83007E7E60 /* ZYLoginRegisterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYLoginRegisterView.m; sourceTree = "<group>"; };
+		671C48D92498BECF007E7E60 /* ZYLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYLoginView.h; sourceTree = "<group>"; };
+		671C48DA2498BECF007E7E60 /* ZYLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYLoginView.m; sourceTree = "<group>"; };
+		671C48DC2498BF5F007E7E60 /* ZYRegisterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYRegisterView.h; sourceTree = "<group>"; };
+		671C48DD2498BF5F007E7E60 /* ZYRegisterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYRegisterView.m; sourceTree = "<group>"; };
+		671C48DF2498D843007E7E60 /* ZYLogOnViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYLogOnViewController.m; sourceTree = "<group>"; };
+		671C48E12498E8D1007E7E60 /* ZYTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYTextField.h; sourceTree = "<group>"; };
+		671C48E22498E8D1007E7E60 /* ZYTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYTextField.m; sourceTree = "<group>"; };
+		671C48E42499058B007E7E60 /* UITextField+ZYPlaceholderColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+ZYPlaceholderColor.h"; sourceTree = "<group>"; };
+		671C48E52499058B007E7E60 /* UITextField+ZYPlaceholderColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+ZYPlaceholderColor.m"; sourceTree = "<group>"; };
 		67AEACFF2493A65900A57CB0 /* 搞笑段子.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "搞笑段子.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67AEAD332493A8E100A57CB0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		67AEAD342493A8E100A57CB0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -56,8 +86,6 @@
 		67AEAD4B2493A8E100A57CB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67AEAD782493AC2C00A57CB0 /* GXDZ.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GXDZ.pch; sourceTree = "<group>"; };
 		67D470782494F28E00B5D967 /* ZYLogOnViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYLogOnViewController.h; sourceTree = "<group>"; };
-		67D470792494F28E00B5D967 /* ZYLogOnViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYLogOnViewController.m; sourceTree = "<group>"; };
-		67D4707A2494F28E00B5D967 /* ZYLogOnViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYLogOnViewController.xib; sourceTree = "<group>"; };
 		67D4707D2494FC2B00B5D967 /* ZYNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYNavigationController.h; sourceTree = "<group>"; };
 		67D4707E2494FC2B00B5D967 /* ZYNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYNavigationController.m; sourceTree = "<group>"; };
 		67D470832494FFF900B5D967 /* UIBarButtonItem+ZYItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+ZYItem.h"; sourceTree = "<group>"; };
@@ -365,8 +393,12 @@
 				67FAB2F224946FC700413243 /* UIView+Farme.m */,
 				67FAB2F424947DF600413243 /* UIImage+ZYRender.h */,
 				67FAB2F524947DF600413243 /* UIImage+ZYRender.m */,
+				671C48D32498B492007E7E60 /* UIImage+ZYRevised.h */,
+				671C48D42498B492007E7E60 /* UIImage+ZYRevised.m */,
 				67D470832494FFF900B5D967 /* UIBarButtonItem+ZYItem.h */,
 				67D470842494FFF900B5D967 /* UIBarButtonItem+ZYItem.m */,
+				671C48E42499058B007E7E60 /* UITextField+ZYPlaceholderColor.h */,
+				671C48E52499058B007E7E60 /* UITextField+ZYPlaceholderColor.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -549,8 +581,7 @@
 			isa = PBXGroup;
 			children = (
 				67D470782494F28E00B5D967 /* ZYLogOnViewController.h */,
-				67D470792494F28E00B5D967 /* ZYLogOnViewController.m */,
-				67D4707A2494F28E00B5D967 /* ZYLogOnViewController.xib */,
+				671C48DF2498D843007E7E60 /* ZYLogOnViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -565,6 +596,22 @@
 		67D470772494F23600B5D967 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				671C48BE2497CB86007E7E60 /* ZYTopBar.h */,
+				671C48BF2497CB86007E7E60 /* ZYTopBar.m */,
+				671C48CA2497CD34007E7E60 /* ZYMiddleBar.h */,
+				671C48CB2497CD34007E7E60 /* ZYMiddleBar.m */,
+				671C48CD2497CD6C007E7E60 /* ZYBottomBar.h */,
+				671C48CE2497CD6C007E7E60 /* ZYBottomBar.m */,
+				671C48D024987DC1007E7E60 /* ZYQuickLogonButton.h */,
+				671C48D124987DC1007E7E60 /* ZYQuickLogonButton.m */,
+				671C48D92498BECF007E7E60 /* ZYLoginView.h */,
+				671C48DA2498BECF007E7E60 /* ZYLoginView.m */,
+				671C48DC2498BF5F007E7E60 /* ZYRegisterView.h */,
+				671C48DD2498BF5F007E7E60 /* ZYRegisterView.m */,
+				671C48D62498BC83007E7E60 /* ZYLoginRegisterView.h */,
+				671C48D72498BC83007E7E60 /* ZYLoginRegisterView.m */,
+				671C48E12498E8D1007E7E60 /* ZYTextField.h */,
+				671C48E22498E8D1007E7E60 /* ZYTextField.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -646,7 +693,6 @@
 				67AEAD502493A8E100A57CB0 /* LaunchScreen.storyboard in Resources */,
 				67AEAD4F2493A8E100A57CB0 /* Assets.xcassets in Resources */,
 				67FAB2DB2493C9BC00413243 /* ZYAdvertController.xib in Resources */,
-				67D4707C2494F28E00B5D967 /* ZYLogOnViewController.xib in Resources */,
 				67D47094249640BD00B5D967 /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				67D47092249640BD00B5D967 /* LaunchImage-568h@2x.png in Resources */,
 				67D47096249640BD00B5D967 /* LaunchImage-700-568h@2x.png in Resources */,
@@ -706,23 +752,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				671C48DB2498BECF007E7E60 /* ZYLoginView.m in Sources */,
+				671C48D224987DC1007E7E60 /* ZYQuickLogonButton.m in Sources */,
+				671C48DE2498BF5F007E7E60 /* ZYRegisterView.m in Sources */,
+				671C48D52498B492007E7E60 /* UIImage+ZYRevised.m in Sources */,
 				67FAB2DA2493C9BC00413243 /* ZYAdvertController.m in Sources */,
 				67FAB2E12493D08B00413243 /* ZYAdvertItem.m in Sources */,
+				671C48C02497CB86007E7E60 /* ZYTopBar.m in Sources */,
+				671C48E02498D843007E7E60 /* ZYLogOnViewController.m in Sources */,
+				671C48E62499058B007E7E60 /* UITextField+ZYPlaceholderColor.m in Sources */,
 				67FAB2ED24946C3B00413243 /* ZYNewViewController.m in Sources */,
 				67AEAD4D2493A8E100A57CB0 /* AppDelegate.m in Sources */,
+				671C48CF2497CD6C007E7E60 /* ZYBottomBar.m in Sources */,
 				67AEAD4C2493A8E100A57CB0 /* main.m in Sources */,
-				67D4707B2494F28E00B5D967 /* ZYLogOnViewController.m in Sources */,
 				67FAB2DE2493CEDD00413243 /* ZYTabBarController.m in Sources */,
 				67FAB2E724946BE000413243 /* ZYPublishViewController.m in Sources */,
+				671C48CC2497CD34007E7E60 /* ZYMiddleBar.m in Sources */,
 				67D4707F2494FC2B00B5D967 /* ZYNavigationController.m in Sources */,
 				67D4708824950AF200B5D967 /* ZYSettingViewController.m in Sources */,
 				671C48BD24972FF4007E7E60 /* ZYSubTagCell.m in Sources */,
 				67FAB2EA24946C0E00413243 /* ZYMeViewController.m in Sources */,
 				67D4709A24965F1500B5D967 /* ZYSubTagViewController.m in Sources */,
+				671C48E32498E8D1007E7E60 /* ZYTextField.m in Sources */,
 				67FAB2F324946FC700413243 /* UIView+Farme.m in Sources */,
 				671C48BA24972D57007E7E60 /* ZYSubTagItem.m in Sources */,
 				67FAB2E424946B9F00413243 /* ZYEssenceViewController.m in Sources */,
 				67FAB2F624947DF600413243 /* UIImage+ZYRender.m in Sources */,
+				671C48D82498BC83007E7E60 /* ZYLoginRegisterView.m in Sources */,
 				67FAB2F024946C8000413243 /* ZYFriendViewController.m in Sources */,
 				67D470852494FFF900B5D967 /* UIBarButtonItem+ZYItem.m in Sources */,
 				67FAB2D62493C0E500413243 /* ZYNetworkTool.m in Sources */,

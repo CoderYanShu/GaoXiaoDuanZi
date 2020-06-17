@@ -16,6 +16,8 @@ typedef NS_ENUM(NSUInteger, ZYRequestType) {
   
 };
 
+
+
 @interface ZYNetworkTool : NSObject
 
 + (void)rquestWithType:(ZYRequestType)type url:(NSString *)url params:(NSDictionary *)params success:(void (^)(id result))success failure:(void (^)(NSError *error))failure;

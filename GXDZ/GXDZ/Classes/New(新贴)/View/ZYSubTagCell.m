@@ -8,7 +8,6 @@
 
 #import "ZYSubTagCell.h"
 #import "ZYSubTagItem.h"
-#import <Masonry.h>
 
 @interface ZYSubTagCell ()
 
