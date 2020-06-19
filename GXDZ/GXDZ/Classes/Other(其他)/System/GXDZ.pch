@@ -17,9 +17,10 @@
 
 #define kURL_STRING @"http://api.budejie.com/api/api_open.php"
 
-#define kSCREEN_WIDTH (NSInteger)UIScreen.mainScreen.bounds.size.width
-#define kSCREEN_HEIGHT (NSInteger)UIScreen.mainScreen.bounds.size.height
-#define kNAIGATION_BAR_HEIGHT self.navigationController.navigationBar.height
+#define kTAB_BAR_HEIGHT self.tabBarController.tabBar.height
+#define kSCREEN_WIDTH UIScreen.mainScreen.bounds.size.width
+#define kSCREEN_HEIGHT UIScreen.mainScreen.bounds.size.height
+#define kNAVIGATION_BAR_HEIGHT self.navigationController.navigationBar.height
 #define kSTATUS_BAR_HEIGHT UIApplication.sharedApplication.statusBarFrame.size.height
 
 #endif 

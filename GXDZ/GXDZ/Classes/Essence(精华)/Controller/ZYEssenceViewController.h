@@ -6,11 +6,11 @@
 //  Copyright © 2020 ZYP OnTheRoad. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ZYTopTabBarController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZYEssenceViewController : UITableViewController
+@interface ZYEssenceViewController : ZYTopTabBarController
 
 @end
 

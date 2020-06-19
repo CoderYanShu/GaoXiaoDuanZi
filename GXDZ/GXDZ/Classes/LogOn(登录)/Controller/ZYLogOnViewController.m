@@ -107,8 +107,8 @@
        
         make.left.right.equalTo(self.view);
         make.height.equalTo(@40);
-        if (kNAIGATION_BAR_HEIGHT) {
-             make.top.offset(kSTATUS_BAR_HEIGHT + kNAIGATION_BAR_HEIGHT + 0);
+        if (kNAVIGATION_BAR_HEIGHT) {
+             make.top.offset(kSTATUS_BAR_HEIGHT + kNAVIGATION_BAR_HEIGHT + 0);
         }
         else {
              make.top.offset(kSTATUS_BAR_HEIGHT + 0);

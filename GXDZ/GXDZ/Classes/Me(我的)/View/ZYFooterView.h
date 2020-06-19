@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZYCollectionView : UICollectionView
+@interface ZYFooterView : UICollectionView
 
 @property (nonatomic, readonly) CGFloat margin;
 @property (nonatomic, readonly) NSInteger columns;

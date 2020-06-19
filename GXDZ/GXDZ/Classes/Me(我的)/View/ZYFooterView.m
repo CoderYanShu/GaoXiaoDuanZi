@@ -6,9 +6,9 @@
 //  Copyright © 2020 ZYP OnTheRoad. All rights reserved.
 //
 
-#import "ZYCollectionView.h"
+#import "ZYFooterView.h"
 
-@implementation ZYCollectionView
+@implementation ZYFooterView
 
 - (UICollectionViewFlowLayout *)flowLayout {
     

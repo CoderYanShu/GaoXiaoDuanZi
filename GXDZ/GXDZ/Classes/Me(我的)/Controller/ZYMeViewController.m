@@ -8,7 +8,7 @@
 
 #import "ZYMeViewController.h"
 #import "ZYSettingViewController.h"
-#import "ZYCollectionView.h"
+#import "ZYFooterView.h"
 #import "ZYFooterCell.h"
 #import "ZYLogOnViewController.h"
 #import "ZYSquareItem.h"
@@ -20,8 +20,8 @@ static NSString *const footerID = @"footerCell";
 
 @interface ZYMeViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
+@property (nonatomic ,strong) ZYFooterView *footerView;
 @property (nonatomic ,strong) NSMutableArray *squareItems;
-@property (nonatomic ,strong) ZYCollectionView *footerView;
 @property (nonatomic ,strong) AFHTTPSessionManager *manager;
 
 @end
@@ -97,15 +97,16 @@ static NSString *const footerID = @"footerCell";
 #pragma mark- 设置尾部视图
 - (void)setUpTableFooterView {
 
-    _footerView = [[ZYCollectionView alloc] init];
+    _footerView = [[ZYFooterView alloc] init];
 
     //注册 CollectionView Cell
     [_footerView registerClass:ZYFooterCell.class forCellWithReuseIdentifier:footerID];
     
     _footerView.frame = CGRectMake(0, 0, kSCREEN_WIDTH, 500);
-    _footerView.dataSource = self;
     
+    _footerView.dataSource = self;
     _footerView.delegate = self;
+    
     self.tableView.tableFooterView = _footerView;
 }
 
