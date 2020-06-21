@@ -94,4 +94,5 @@
     
     [_imageView sd_setImageWithURL:[NSURL URLWithString:topicItem.image]];
 }
+
 @end

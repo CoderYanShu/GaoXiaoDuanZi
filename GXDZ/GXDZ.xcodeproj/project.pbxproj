@@ -48,6 +48,7 @@
 		671C49A8249F02B4007E7E60 /* ZYUserItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C49A7249F02B4007E7E60 /* ZYUserItem.m */; };
 		671C49AB249F1551007E7E60 /* ZYTopicBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C49AA249F1551007E7E60 /* ZYTopicBottomView.m */; };
 		671C49B1249F4C04007E7E60 /* NSDate+ZYDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C49B0249F4C04007E7E60 /* NSDate+ZYDate.m */; };
+		671C49B4249F6279007E7E60 /* ZYEnlargePictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C49B3249F6279007E7E60 /* ZYEnlargePictViewController.m */; };
 		67AEAD4C2493A8E100A57CB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AEAD342493A8E100A57CB0 /* main.m */; };
 		67AEAD4D2493A8E100A57CB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AEAD352493A8E100A57CB0 /* AppDelegate.m */; };
 		67AEAD4F2493A8E100A57CB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67AEAD492493A8E100A57CB0 /* Assets.xcassets */; };
@@ -158,6 +159,8 @@
 		671C49AA249F1551007E7E60 /* ZYTopicBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYTopicBottomView.m; sourceTree = "<group>"; };
 		671C49AF249F4C04007E7E60 /* NSDate+ZYDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+ZYDate.h"; sourceTree = "<group>"; };
 		671C49B0249F4C04007E7E60 /* NSDate+ZYDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ZYDate.m"; sourceTree = "<group>"; };
+		671C49B2249F6279007E7E60 /* ZYEnlargePictViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYEnlargePictViewController.h; sourceTree = "<group>"; };
+		671C49B3249F6279007E7E60 /* ZYEnlargePictViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYEnlargePictViewController.m; sourceTree = "<group>"; };
 		67AEACFF2493A65900A57CB0 /* 搞笑段子.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "搞笑段子.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67AEAD332493A8E100A57CB0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		67AEAD342493A8E100A57CB0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -368,6 +371,8 @@
 				671C497A249B977E007E7E60 /* childControllers */,
 				67FAB2E224946B9F00413243 /* ZYEssenceViewController.h */,
 				67FAB2E324946B9F00413243 /* ZYEssenceViewController.m */,
+				671C49B2249F6279007E7E60 /* ZYEnlargePictViewController.h */,
+				671C49B3249F6279007E7E60 /* ZYEnlargePictViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -929,6 +934,7 @@
 				671C48CF2497CD6C007E7E60 /* ZYBottomBar.m in Sources */,
 				67AEAD4C2493A8E100A57CB0 /* main.m in Sources */,
 				67FAB2DE2493CEDD00413243 /* ZYTabBarController.m in Sources */,
+				671C49B4249F6279007E7E60 /* ZYEnlargePictViewController.m in Sources */,
 				671C4903249A52A9007E7E60 /* ZYRowItem.m in Sources */,
 				67FAB2E724946BE000413243 /* ZYPublishViewController.m in Sources */,
 				671C49A5249F0215007E7E60 /* ZYCommentItem.m in Sources */,

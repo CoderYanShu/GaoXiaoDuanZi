@@ -10,6 +10,8 @@
 #import "ZYProgressView.h"
 #import "ZYTopicItem.h"
 
+#import "ZYEnlargePictViewController.h"
+
 @interface ZYTopicPictView ()
 
 @property (nonatomic ,strong) UIImageView *gifView;
@@ -140,5 +142,16 @@
         
         self.imageView.image = image;
     }];
+}
+
+#pragma mark- 点击查看大图
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    ZYEnlargePictViewController *enlargePictVc = [[ZYEnlargePictViewController alloc] init];
+    enlargePictVc.topicItem = _topicItem;
+    
+    enlargePictVc.modalPresentationStyle = UIModalPresentationFullScreen;
+    
+    [UIApplication.sharedApplication.keyWindow.rootViewController presentViewController:enlargePictVc animated:YES completion:nil];
 }
 @end
