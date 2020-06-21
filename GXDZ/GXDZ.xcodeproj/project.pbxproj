@@ -47,6 +47,7 @@
 		671C49A5249F0215007E7E60 /* ZYCommentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C49A4249F0215007E7E60 /* ZYCommentItem.m */; };
 		671C49A8249F02B4007E7E60 /* ZYUserItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C49A7249F02B4007E7E60 /* ZYUserItem.m */; };
 		671C49AB249F1551007E7E60 /* ZYTopicBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C49AA249F1551007E7E60 /* ZYTopicBottomView.m */; };
+		671C49B1249F4C04007E7E60 /* NSDate+ZYDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C49B0249F4C04007E7E60 /* NSDate+ZYDate.m */; };
 		67AEAD4C2493A8E100A57CB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AEAD342493A8E100A57CB0 /* main.m */; };
 		67AEAD4D2493A8E100A57CB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AEAD352493A8E100A57CB0 /* AppDelegate.m */; };
 		67AEAD4F2493A8E100A57CB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67AEAD492493A8E100A57CB0 /* Assets.xcassets */; };
@@ -155,6 +156,8 @@
 		671C49A7249F02B4007E7E60 /* ZYUserItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYUserItem.m; sourceTree = "<group>"; };
 		671C49A9249F1551007E7E60 /* ZYTopicBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYTopicBottomView.h; sourceTree = "<group>"; };
 		671C49AA249F1551007E7E60 /* ZYTopicBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYTopicBottomView.m; sourceTree = "<group>"; };
+		671C49AF249F4C04007E7E60 /* NSDate+ZYDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+ZYDate.h"; sourceTree = "<group>"; };
+		671C49B0249F4C04007E7E60 /* NSDate+ZYDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ZYDate.m"; sourceTree = "<group>"; };
 		67AEACFF2493A65900A57CB0 /* 搞笑段子.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "搞笑段子.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67AEAD332493A8E100A57CB0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		67AEAD342493A8E100A57CB0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -568,6 +571,8 @@
 				67D470842494FFF900B5D967 /* UIBarButtonItem+ZYItem.m */,
 				671C48E42499058B007E7E60 /* UITextField+ZYPlaceholderColor.h */,
 				671C48E52499058B007E7E60 /* UITextField+ZYPlaceholderColor.m */,
+				671C49AF249F4C04007E7E60 /* NSDate+ZYDate.h */,
+				671C49B0249F4C04007E7E60 /* NSDate+ZYDate.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -939,6 +944,7 @@
 				671C48E32498E8D1007E7E60 /* ZYTextField.m in Sources */,
 				67FAB2F324946FC700413243 /* UIView+Farme.m in Sources */,
 				671C48BA24972D57007E7E60 /* ZYSubTagItem.m in Sources */,
+				671C49B1249F4C04007E7E60 /* NSDate+ZYDate.m in Sources */,
 				67FAB2E424946B9F00413243 /* ZYEssenceViewController.m in Sources */,
 				67FAB2F624947DF600413243 /* UIImage+ZYRender.m in Sources */,
 				671C4999249E267A007E7E60 /* ZYProgressView.m in Sources */,

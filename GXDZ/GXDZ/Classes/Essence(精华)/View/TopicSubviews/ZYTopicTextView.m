@@ -8,6 +8,7 @@
 
 #import "ZYTopicTextView.h"
 #import "ZYTopicItem.h"
+#import "NSDate+ZYDate.h"
 
 @interface ZYTopicTextView ()
 /// 发帖时间
@@ -127,8 +128,10 @@
 - (void)setTopicItem:(ZYTopicItem *)topicItem {
     
     _topicItem = topicItem;
+    
     [self setUpIcon:topicItem];
-    _timeLabel.text = topicItem.time;
+    [self setUpTime:topicItem];
+    
     _nameLabel.text = topicItem.name;
     _textLabel.text = topicItem.text;
 }
@@ -165,42 +168,49 @@
 }
 
 #pragma mark - 设置发帖时间
-/*
 - (void)setUpTime:(ZYTopicItem *)topicItem {
-    
-    NSString *time = topicItem.time;
-    //time = @"2019-11-04 16:06:00";
-    //创建日期和字符串表示之间格式化转换器
+    //创建时间格式器
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    //设置时间格式器
     formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-    //发帖日期
-    NSDate *postingDate = [formatter dateFromString:time];
-     //发帖日期与当前时差
-    NSDateComponents *difference = [postingDate timeDifferenceWithHours];
     
-    if ([postingDate isThisYear]) {
-        if ([postingDate isToday]) {
-            if (difference.hour >= 1) {
-                time = [NSString stringWithFormat:@"%li小时前",difference.hour];
-            }
-            else if (difference.minute >= 1) {
-                time = [NSString stringWithFormat:@"%li分钟前",difference.minute];
-            }
-            else {
-                time = @"刚刚";
-            }
-        }
-        else if ([postingDate isYesterday]) {
-            formatter.dateFormat = @"昨天 HH:mm";
-            time = [formatter stringFromDate:postingDate];
-        }
-        else {
-            formatter.dateFormat = @"MM-dd HH:mm";
-            time = [formatter stringFromDate:postingDate];
-        }
+    //发帖时间字符串转换成发布时间
+    NSDate *publishDate = [formatter dateFromString:topicItem.time];
+    
+    //判断是否今年
+    if (!publishDate.isThisYear) {//非今年
+        _timeLabel.text = topicItem.time;
+        return;
     }
     
-    _timeLabel.text = time;
+    //今年
+    //判断是否昨天以前(非今天,非昨天)
+    if (!(publishDate.isYesterday || publishDate.isToday)) {//昨天以前
+        formatter.dateFormat = @"MM-dd HH:mm";
+        _timeLabel.text = [formatter stringFromDate:publishDate];
+        return;
+    }
+    
+    
+    //判断是否昨天
+    if (publishDate.isYesterday) {//昨天
+        formatter.dateFormat = @"昨天 HH:mm";
+        _timeLabel.text = [formatter stringFromDate:publishDate];
+        return;
+    }
+    
+    //今天
+    //获取发帖时间与现在的时差
+    NSDateComponents *difference = [publishDate timeDistanceWithNow];
+    
+    if (difference.hour >= 1) {//一小时前
+        _timeLabel.text = [NSString stringWithFormat:@"%li小时前",difference.hour];
+    }
+    else if (difference.minute >= 1) {//一分钟前
+        _timeLabel.text = [NSString stringWithFormat:@"%li分钟前",difference.minute];
+    }
+    else {
+        _timeLabel.text = @"刚刚";
+    }
 }
- */
 @end
