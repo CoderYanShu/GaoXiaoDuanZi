@@ -29,6 +29,10 @@
     
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [SVProgressHUD dismiss];
+}
 - (void)setUpNavigationItem {
     
     self.navigationItem.title = @"设置";

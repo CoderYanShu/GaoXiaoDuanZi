@@ -152,43 +152,45 @@ static NSString * const ID = @"CONTENTCELL";
 
 #pragma mark - 计算 按钮宽度 并保存到数组
 - (void)setUpTabWidth {
-    //标签文字总宽
+    //标签标题总宽
     CGFloat totalTitleWidth = 0;
-    //标签文字间距(默认间距)
+    //标签标题间距(默认间距)
     CGFloat margin = kTOP_TAB_TITLE_MARGIN;
     //标签个数
     NSUInteger count = self.childViewControllers.count;
-    //临时数组(保存标签文字宽度的数组)
-    NSMutableArray *widths = [NSMutableArray array];
-    //获取所有标签文字
+    //标签标题宽度的数组
+    NSMutableArray *titleWidths = [NSMutableArray array];
+    //获取所有标签标题
     NSArray *titles = [self.childViewControllers valueForKeyPath:@"title"];
     
-    //遍历所有标签文字
+    //遍历所有标签标题
     for (NSString *title in titles) {
         //判断标题是否为空. 为空抛出异常
         if ([title isKindOfClass:NSNull.class]) {// 抛异常
             NSException *excp = [NSException exceptionWithName:@""reason:@"没有设置子控制器的title属性" userInfo:nil];
             [excp raise];
         }
-        //计算标签文字宽
+        //计算标签标题宽
         CGFloat titleWidth = [title boundingRectWithSize:CGSizeMake(MAXFLOAT, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:kTITLE_BAR_FONT} context:nil].size.width;
-        //将标签文字宽保存到临时数组
-        [widths addObject:@(titleWidth)];
         
-        //标签文字总宽 = 所有标签文字宽累加
+        //将标签标题宽保存到临时数组
+        [titleWidths addObject:@(titleWidth)];
+        
+        //标签标题总宽
         totalTitleWidth += titleWidth;
     }
-    //判断 (标题总宽 + 标签数 * 标签文字间距) 是否能占据整个屏幕
-    if ((totalTitleWidth + count * margin) < kSCREEN_WIDTH) {//不能占据整个屏幕
-        //重新计算 标签文字间距 = (屏幕宽 - 标题总宽) / 标签数
+    
+    //判断 (标签标题总宽 + 标签标题总间距) 是否能占据整个屏幕
+    if ((totalTitleWidth + count * margin) < kSCREEN_WIDTH) {
+        //不能占据整个屏幕, 重新计算标签标题间距 = (屏幕宽 - 标题总宽) / 标签数
         margin = (kSCREEN_WIDTH - totalTitleWidth) / count;
     }
-    
+
     //确保将标签宽度数组初始值为空
     [self.tabWidths removeAllObjects];
     
-    //保存标签宽度到数组
-    for (NSNumber *width in widths) {
+    //保存标签宽度(标题宽 + 标题间距)到数组
+    for (NSNumber *width in titleWidths) {
         [self.tabWidths addObject:@(width.floatValue + margin)];
     }
 }
@@ -207,9 +209,9 @@ static NSString * const ID = @"CONTENTCELL";
     //获取标题的数
     NSUInteger count = titles.count;
     
-    //根据所有标题创建并设置标题按钮
+    //根据所有标题创建并设置标签按钮
     for (int i = 0; i < count; i++) {
-        //创建标题按钮
+        //创建标签按钮
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         //设置标记
         button.tag = i;
@@ -229,13 +231,13 @@ static NSString * const ID = @"CONTENTCELL";
         //设置按钮 frame
         button.frame = CGRectMake(titleX, titleY, titleW, titleH);
         
-        // 保存到数组
+        // 保存到标签数组
         [self.tabs addObject:button];
         
-        //监听点击
+        //监听标签点击
         [button addTarget:self action:@selector(tabClick:) forControlEvents:UIControlEventTouchUpInside];
         
-        //默认点击第0个
+        //默认选中第0个标签
         if (i == _selectIndex) [self tabClick:button];
         
         // 设置标题滚动视图的内容范围
@@ -251,30 +253,28 @@ static NSString * const ID = @"CONTENTCELL";
 /// 点击标签
 /// @param button 点击的标签
 - (void)tabClick:(UIButton *)button {
-    //1. 改变选中button 状态
+    //1. 选中标签
     [self selectedTab:button];
-    
     //2. 内容滚动视图滚动到对应位置
-    CGFloat offsetX = button.tag * kSCREEN_WIDTH;
-    self.contentView.contentOffset = CGPointMake(offsetX, 0);
+    self.contentView.contentOffset = CGPointMake(button.tag * kSCREEN_WIDTH, 0);
 }
 /// 选中标签
 /// @param button 选中的标签
 - (void)selectedTab:(UIButton *)button {
-    //1. 取消标记选中按钮的选中状态
+    //1. 取消前一个标记选中标签的选中状态
     self.selectButton.selected = NO;
-    //2. 当前按钮设置为选中状态
+    //2. 当前标签设置为选中状态
     button.selected = YES;
-    //3. 当前按钮为标记选中按钮
+    //3. 设置标记选中标签为当前标签
     self.selectButton = button;
-    //4.让签居中
+    //4.滚动标签至居中
     [self scrollTabToCenter:button];
-    //5. 移动下划线到当前按钮下方
+    //5. 移动下划线到当前标签
     [UIView animateWithDuration:0.1 animations:^{
         self.underLine.centerX = button.centerX;
    }];
 }
-/// 滚动标签居中
+/// 滚动标签至居中
 - (void)scrollTabToCenter:(UIButton *)button {
     // 计算标签到屏幕中心的偏移量: 按钮中心到屏幕中心的距离
     CGFloat offsetX = button.center.x - kSCREEN_WIDTH * 0.5;
@@ -284,7 +284,7 @@ static NSString * const ID = @"CONTENTCELL";
     CGFloat maxOffsetX = self.topTabBar.contentSize.width - kSCREEN_WIDTH;
     //如果 偏移量 大于 最大偏移量,将 偏移量 = 最大偏移量
     offsetX = offsetX > maxOffsetX ? maxOffsetX : offsetX;
-    
+    //设置滚动到指定点动画
     [self.topTabBar setContentOffset:CGPointMake(offsetX, 0) animated:YES];
 }
 
@@ -315,8 +315,6 @@ static NSString * const ID = @"CONTENTCELL";
     else {
         vc.tableView.contentInset = UIEdgeInsetsMake(kTOP_TAB_BAR_HEIGHT + kNAVIGATION_BAR_HEIGHT + kSTATUS_BAR_HEIGHT, 0, kTAB_BAR_HEIGHT, 0);
     }
-   
-    cell.backgroundColor = UIColor.yellowColor;
     
     return cell;
 }
@@ -328,6 +326,7 @@ static NSString * const ID = @"CONTENTCELL";
     //计算当前页数:
     NSInteger page = scrollView.contentOffset.x / kSCREEN_WIDTH;
     
+    //选中当前页对应的标签
     [self selectedTab:self.tabs[page]];
 }
 @end

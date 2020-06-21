@@ -30,7 +30,6 @@
 
 #pragma mark- 设置导航条
 - (void)setUpNavigationItem {
-    
     //导航条的内容由栈顶控制器 navigationItem 来决定
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
 }
