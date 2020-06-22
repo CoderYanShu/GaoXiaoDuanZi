@@ -1,5 +1,5 @@
 //
-//  ZYFootRefreshView.h
+//  ZYHeadRefreshView.h
 //  GXDZ
 //
 //  Created by ZYP OnTheRoad on 2020/6/22.
@@ -10,8 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// 上啦刷新
-@interface ZYFootRefreshView : UIView
+/// 下拉刷新
+@interface ZYHeadRefreshView : UIView
 
 @property (nonatomic ,assign) BOOL isRefreshing;
 @property (nonatomic ,assign) BOOL isCanRefresh;
