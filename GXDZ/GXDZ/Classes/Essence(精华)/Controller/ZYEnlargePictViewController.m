@@ -12,6 +12,7 @@
 #import "ZYTopicItem.h"
 #import <SVProgressHUD.h>
 #import <Photos/Photos.h>
+#import "ZYPhotoManager.h"
 #define kALBUM_TITLEL @"搞笑段子"
 
 @interface ZYEnlargePictViewController ()<UIScrollViewDelegate>
@@ -122,7 +123,17 @@
         //请求授权
         [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
             
-            if (status == PHAuthorizationStatusAuthorized) [self savePhoto];
+            if (status == PHAuthorizationStatusAuthorized) {
+                [ZYPhotoManager savePhotoWithImage:self.enlargImage albumTitel:kALBUM_TITLEL completed:^(BOOL success, NSError * error) {
+                    if (error) {
+                        NSLog(@"%@", error.localizedDescription);
+                        [SVProgressHUD showErrorWithStatus:@"保存失败"];
+                    }
+                    else {
+                        [SVProgressHUD showSuccessWithStatus:@"保存成功"];
+                    }
+                }];
+            }
         }];
     }
     else if (status == PHAuthorizationStatusRestricted) {//授权状态受限
@@ -132,12 +143,79 @@
          [SVProgressHUD showErrorWithStatus:@"保存失败!进入设置修改权限"];
     }
     else if (status == PHAuthorizationStatusAuthorized) {//授权状态授权
-        [self savePhoto];
+        [ZYPhotoManager savePhotoWithImage:self.enlargImage albumTitel:kALBUM_TITLEL completed:^(BOOL success, NSError * error) {
+            if (error) {
+                NSLog(@"%@", error.localizedDescription);
+                [SVProgressHUD showErrorWithStatus:@"保存失败"];
+            }
+            else {
+                [SVProgressHUD showSuccessWithStatus:@"保存成功"];
+            }
+        }];
     }
     
     //将指定的图像添加到用户的相机滚动相册中。
     //UIImageWriteToSavedPhotosAlbum(self.imageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 }
+#pragma mark- 返回
+- (void)backButtonClick {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark- 下载图片
+- (void)loadPicture {
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:_topicItem.image] placeholderImage:nil options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL *targetURL) {
+        
+        if (expectedSize == -1) return;
+        
+        CGFloat progress = 1.0 * receivedSize / expectedSize;
+        //设置进度
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.progressView.progress = progress;
+        });
+        
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        self.progressView.hidden = YES;
+        self.imageView.image = image;
+        self.enlargImage = image;
+    }];
+    
+    CGFloat height = kSCREEN_WIDTH / self.topicItem.width * self.topicItem.height;
+    self.imageView.frame = CGRectMake(0, 0, kSCREEN_WIDTH, height);
+    
+    if (self.topicItem.isBigPict) {
+        self.enlargPictView.contentSize = CGSizeMake(0, height);
+        self.enlargPictView.delegate = self;
+        self.enlargPictView.maximumZoomScale = 2;
+        self.enlargPictView.minimumZoomScale = 0.5;
+        
+           if (kSCREEN_WIDTH < self.topicItem.width) {
+               self.enlargPictView.maximumZoomScale = self.topicItem.width / kSCREEN_WIDTH;
+           }
+       }
+       else {
+           self.imageView.center = CGPointMake(kSCREEN_WIDTH * 0.5, kSCREEN_HEIGHT * 0.5);
+       }
+}
+
+#pragma mark - UIScrollViewDelegate
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    return self.imageView;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #pragma mark- 保存照片到系统相簿完成时调用
 //UIImageWriteToSavedPhotosAlbum(self.imageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
@@ -212,50 +290,5 @@
     }];
     
   
-}
-#pragma mark- 返回
-- (void)backButtonClick {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-#pragma mark- 下载图片
-- (void)loadPicture {
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:_topicItem.image] placeholderImage:nil options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL *targetURL) {
-        
-        if (expectedSize == -1) return;
-        
-        CGFloat progress = 1.0 * receivedSize / expectedSize;
-        //设置进度
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.progressView.progress = progress;
-        });
-        
-    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        self.progressView.hidden = YES;
-        self.imageView.image = image;
-        self.enlargImage = image;
-    }];
-    
-    CGFloat height = kSCREEN_WIDTH / self.topicItem.width * self.topicItem.height;
-    self.imageView.frame = CGRectMake(0, 0, kSCREEN_WIDTH, height);
-    
-    if (self.topicItem.isBigPict) {
-        self.enlargPictView.contentSize = CGSizeMake(0, height);
-        self.enlargPictView.delegate = self;
-        self.enlargPictView.maximumZoomScale = 2;
-        self.enlargPictView.minimumZoomScale = 0.5;
-        
-           if (kSCREEN_WIDTH < self.topicItem.width) {
-               self.enlargPictView.maximumZoomScale = self.topicItem.width / kSCREEN_WIDTH;
-           }
-       }
-       else {
-           self.imageView.center = CGPointMake(kSCREEN_WIDTH * 0.5, kSCREEN_HEIGHT * 0.5);
-       }
-}
-
-#pragma mark - UIScrollViewDelegate
-- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
-    return self.imageView;
 }
 @end
