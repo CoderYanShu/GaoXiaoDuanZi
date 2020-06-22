@@ -145,7 +145,7 @@
 }
 
 #pragma mark- 点击查看大图
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     ZYEnlargePictViewController *enlargePictVc = [[ZYEnlargePictViewController alloc] init];
     enlargePictVc.topicItem = _topicItem;
