@@ -9,6 +9,7 @@
 #ifndef GXDZ_pch
 #define GXDZ_pch
 
+#import <MJRefresh.h>
 #import <Masonry.h>
 #import <SDWebImage.h>
 #import <AFNetworking.h>
