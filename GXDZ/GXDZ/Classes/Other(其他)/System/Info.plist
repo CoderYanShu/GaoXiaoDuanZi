@@ -47,6 +47,6 @@
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>保存照片</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>使用照片</string>
+	<string>保存和获取照片</string>
 </dict>
 </plist>
