@@ -7,12 +7,7 @@
 //
 
 #import "ZYEssenceViewController.h"
-
-#import "ZYAllViewController.h"
-#import "ZYPictViewController.h"
-#import "ZYTextViewController.h"
-#import "ZYVideoViewController.h"
-#import "ZYVoiceViewController.h"
+#import "ZYTopicViewController.h"
 
 @interface ZYEssenceViewController ()
 
@@ -37,17 +32,23 @@
 #pragma mark- 添加子控制器
 - (void)setUpChildViewController {
     
-    ZYAllViewController *allVc = [[ZYAllViewController alloc] init];
-    ZYVideoViewController *videoVc = [[ZYVideoViewController alloc] init];
-    ZYVoiceViewController *voiceVc = [[ZYVoiceViewController alloc] init];
-    ZYPictViewController *pictVc = [[ZYPictViewController alloc] init];
-    ZYTextViewController *textVc = [[ZYTextViewController alloc] init];
+    ZYTopicViewController *allVc = [[ZYTopicViewController alloc] init];
+    ZYTopicViewController *videoVc = [[ZYTopicViewController alloc] init];
+    ZYTopicViewController *voiceVc = [[ZYTopicViewController alloc] init];
+    ZYTopicViewController *pictVc = [[ZYTopicViewController alloc] init];
+    ZYTopicViewController *textVc = [[ZYTopicViewController alloc] init];
     
     [self addChildViewController:allVc];
     [self addChildViewController:videoVc];
     [self addChildViewController:voiceVc];
     [self addChildViewController:pictVc];
     [self addChildViewController:textVc];
+    
+    allVc.topicType = ZYTopicItemTypeAll;
+    videoVc.topicType = ZYTopicItemTypeVideo;
+    voiceVc.topicType = ZYTopicItemTypeVocie;
+    pictVc.topicType = ZYTopicItemTypePict;
+    textVc.topicType = ZYTopicItemTypeText;
     
     allVc.title = @"全部";
     videoVc.title = @"视频";

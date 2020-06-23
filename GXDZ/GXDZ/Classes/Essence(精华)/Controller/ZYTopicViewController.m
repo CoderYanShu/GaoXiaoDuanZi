@@ -1,18 +1,18 @@
 //
-//  ZYAllViewController.m
+//  ZYTopicViewController.m
 //  GXDZ
 //
-//  Created by ZYP OnTheRoad on 2020/6/18.
+//  Created by ZYP OnTheRoad on 2020/6/23.
 //  Copyright © 2020 ZYP OnTheRoad. All rights reserved.
 //
 
-#import "ZYAllViewController.h"
+#import "ZYTopicViewController.h"
 #import "ZYTopicCell.h"
-#import "ZYTopicItem.h"
-
+#import "ZYNewViewController.h"
 
 static NSString *ID = @"ZYTopicCell";
-@interface ZYAllViewController ()
+
+@interface ZYTopicViewController ()
 
 @property (nonatomic ,strong) NSString *maxtime;
 @property (nonatomic, strong) NSMutableArray *topicItems;
@@ -20,7 +20,8 @@ static NSString *ID = @"ZYTopicCell";
 
 @end
 
-@implementation ZYAllViewController
+@implementation ZYTopicViewController
+
 #pragma mark- 懒加载
 - (NSMutableArray *)topicItems {
     if (!_topicItems) {
@@ -28,6 +29,7 @@ static NSString *ID = @"ZYTopicCell";
     }
     return _topicItems;
 }
+
 - (AFHTTPSessionManager *)manager {
     if (!_manager) {
        AFHTTPSessionManager *manager =  [AFHTTPSessionManager manager];
@@ -49,7 +51,6 @@ static NSString *ID = @"ZYTopicCell";
 - (void)setUpTableView {
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerClass:ZYTopicCell.class forCellReuseIdentifier:ID];
-    
 }
 
 - (void)setUpRefreshView {
@@ -76,9 +77,12 @@ static NSString *ID = @"ZYTopicCell";
     [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
     
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    parameters[@"a"] = @"list";
+    NSString *a = @"list";
+    //判断父控制器是否是ZYNewViewController
+    if ([self.parentViewController isKindOfClass:ZYNewViewController.class]) a = @"newlist";
+    parameters[@"a"] = a;
     parameters[@"c"] = @"data";
-    parameters[@"tybe"] = @(ZYTopicItemTypeAll);
+    parameters[@"tybe"] = @(self.topicType);
     
     [self.manager GET:kURL_STRING parameters:parameters progress:nil success:^(NSURLSessionDataTask *task, NSDictionary  *responseObject) {
     
@@ -110,7 +114,7 @@ static NSString *ID = @"ZYTopicCell";
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
     parameters[@"maxtime"] = _maxtime;
-    parameters[@"tybe"] = @(ZYTopicItemTypeAll);
+    parameters[@"tybe"] = @(self.topicType);
     
     [self.manager GET:kURL_STRING parameters:parameters progress:nil success:^(NSURLSessionDataTask *task, NSDictionary  *responseObject) {
        
@@ -127,6 +131,7 @@ static NSString *ID = @"ZYTopicCell";
     } failure:nil];
     
 }
+
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
@@ -149,3 +154,4 @@ static NSString *ID = @"ZYTopicCell";
     return topicItem.cellHeight;
 }
 @end
+

@@ -8,6 +8,7 @@
 
 #import "ZYNewViewController.h"
 #import "ZYSubTagViewController.h"
+#import "ZYTopicViewController.h"
 
 @interface ZYNewViewController ()
 
@@ -21,6 +22,7 @@
     //设置导航条
     [self setUpNavigationItem];
    
+    [self setUpChildViewController];
 }
 
 #pragma mark- 设置导航条
@@ -38,25 +40,31 @@
     [self.navigationController pushViewController:subTagVC animated:YES];
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return 0;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+#pragma mark- 添加子控制器
+- (void)setUpChildViewController {
     
-    // Configure the cell...
+    ZYTopicViewController *allVc = [[ZYTopicViewController alloc] init];
+    ZYTopicViewController *videoVc = [[ZYTopicViewController alloc] init];
+    ZYTopicViewController *voiceVc = [[ZYTopicViewController alloc] init];
+    ZYTopicViewController *pictVc = [[ZYTopicViewController alloc] init];
+    ZYTopicViewController *textVc = [[ZYTopicViewController alloc] init];
     
-    return cell;
+    [self addChildViewController:allVc];
+    [self addChildViewController:videoVc];
+    [self addChildViewController:voiceVc];
+    [self addChildViewController:pictVc];
+    [self addChildViewController:textVc];
+    
+    allVc.topicType = ZYTopicItemTypeAll;
+    videoVc.topicType = ZYTopicItemTypeVideo;
+    voiceVc.topicType = ZYTopicItemTypeVocie;
+    pictVc.topicType = ZYTopicItemTypePict;
+    textVc.topicType = ZYTopicItemTypeText;
+    
+    allVc.title = @"全部";
+    videoVc.title = @"视频";
+    voiceVc.title = @"声音";
+    pictVc.title = @"图片";
+    textVc.title = @"段子";
 }
-*/
 @end
