@@ -5,32 +5,37 @@
 //  Created by ZYP OnTheRoad on 2020/6/18.
 //  Copyright © 2020 ZYP OnTheRoad. All rights reserved.
 
-#define kUNDERLINE_WIDTH 25
-#define kUNDERLINE_HEIGHT 3
+
 #define kTOP_TAB_BAR_HEIGHT 44
 #define kTOP_TAB_TITLE_MARGIN 20
-#define kTITLE_CLOCR_NORMAL UIColor.blackColor
-#define kTITLE_CLOCR_SELECTED UIColor.redColor
-#define kTITLE_BAR_FONT [UIFont systemFontOfSize:15]
+#define kTOP_TAB_UNDERLINE_WIDTH 25
+#define kTOP_TAB_UNDERLINE_HEIGHT 3
+#define kTOP_TAB_TITLE_CLOCR_NORMAL UIColor.blackColor
+#define kTOP_TAB_TITLE_CLOCR_SELECTED UIColor.redColor
+#define kTOP_TAB_TITLE_FONT [UIFont systemFontOfSize:15]
 
 #import "ZYTopTabBarController.h"
+#import "ZYTopicViewController.h"
 
 static NSString * const ID = @"CONTENTCELL";
+
 @interface ZYTopTabBarController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
 /// 是否初始化
 @property (nonatomic, assign) BOOL isInitial;
-/// 选中指示下标视图
+/// 选中下划线
 @property (nonatomic, strong) UIView *underLine;
+/// 标记选中页
+@property (nonatomic ,assign) NSInteger selectPage;
 /// 标记选中按钮
 @property (nonatomic ,strong) UIButton *selectButton;
-/// 顶部标题栏(滚动视图)
+/// 顶部标题栏
 @property (nonatomic, strong) UIScrollView *topTabBar;
-/// 标题按钮宽度数组
+/// 标签按钮宽度数组
 @property (nonatomic, strong) NSMutableArray *tabWidths;
-/// 标题按钮数组
+/// 标签按钮数组
 @property (nonatomic, strong) NSMutableArray *tabs;
-/// 内容(滚动)视图
+/// 内容视图
 @property (nonatomic, strong) UICollectionView *contentView;
 
 @end
@@ -42,9 +47,9 @@ static NSString * const ID = @"CONTENTCELL";
     if (!_underLine) {
         _underLine = [[UIView alloc] init];
         [self.topTabBar addSubview:_underLine];
-        _underLine.backgroundColor = kTITLE_CLOCR_SELECTED;
-        CGFloat y = kTOP_TAB_BAR_HEIGHT - kUNDERLINE_HEIGHT;
-        _underLine.frame = CGRectMake(0, y, kUNDERLINE_WIDTH, kUNDERLINE_HEIGHT);
+        _underLine.backgroundColor = kTOP_TAB_TITLE_CLOCR_SELECTED;
+        CGFloat y = kTOP_TAB_BAR_HEIGHT - kTOP_TAB_UNDERLINE_HEIGHT;
+        _underLine.frame = CGRectMake(0, y, kTOP_TAB_UNDERLINE_WIDTH, kTOP_TAB_UNDERLINE_HEIGHT);
     }
     return _underLine;
 }
@@ -77,10 +82,10 @@ static NSString * const ID = @"CONTENTCELL";
     [super viewWillAppear:animated];
     
     if (!_isInitial) {
-        // 没有子控制器，不需要设置 topTabBar
+        // 没有子控制器，不需要设置顶部标签栏按钮
         if (!self.childViewControllers.count) return;
         
-        //设置标签宽度
+        //设置标签按钮宽度
         [self setUpTabWidth];
         //设置标签按钮
         [self setUpTab];
@@ -118,8 +123,8 @@ static NSString * const ID = @"CONTENTCELL";
     _contentView.delegate = self;
     
     [self.view addSubview:_contentView];
+    self.extendedLayoutIncludesOpaqueBars = YES;
     
-    //凡是在导航控制器或TabBar控制器下的(继承自)scrollView,自动设置设置内边距
     if (@available(iOS 11.0, *)) {
         _contentView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
@@ -171,7 +176,7 @@ static NSString * const ID = @"CONTENTCELL";
             [excp raise];
         }
         //计算标签标题宽
-        CGFloat titleWidth = [title boundingRectWithSize:CGSizeMake(MAXFLOAT, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:kTITLE_BAR_FONT} context:nil].size.width;
+        CGFloat titleWidth = [title boundingRectWithSize:CGSizeMake(MAXFLOAT, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:kTOP_TAB_TITLE_FONT} context:nil].size.width;
         
         //将标签标题宽保存到临时数组
         [titleWidths addObject:@(titleWidth)];
@@ -216,13 +221,13 @@ static NSString * const ID = @"CONTENTCELL";
         //设置标记
         button.tag = i;
         //设置文字大小
-        button.titleLabel.font = kTITLE_BAR_FONT;
+        button.titleLabel.font = kTOP_TAB_TITLE_FONT;
         //设置标题
         [button setTitle:titles[i] forState:UIControlStateNormal];
         //设置标题颜色
-        [button setTitleColor:kTITLE_CLOCR_NORMAL forState:UIControlStateNormal];
+        [button setTitleColor:kTOP_TAB_TITLE_CLOCR_NORMAL forState:UIControlStateNormal];
         //设置选中标题颜色
-        [button setTitleColor:kTITLE_CLOCR_SELECTED forState:UIControlStateSelected];
+        [button setTitleColor:kTOP_TAB_TITLE_CLOCR_SELECTED forState:UIControlStateSelected];
         
         //计算 titleX
         if (i) titleX += [self.tabWidths[i-1] floatValue];
@@ -253,10 +258,19 @@ static NSString * const ID = @"CONTENTCELL";
 /// 点击标签
 /// @param button 点击的标签
 - (void)tabClick:(UIButton *)button {
-    //1. 选中标签
+
+    //1.判断是否重复点击标签
+    if (button == _selectButton) {
+        //获取子控制器
+        ZYTopicViewController *topicVc = self.childViewControllers[button.tag];
+        //刷新子控制器数据
+        [topicVc reload];
+    }
+    //2. 选中标签
     [self selectedTab:button];
-    //2. 内容滚动视图滚动到对应位置
-    self.contentView.contentOffset = CGPointMake(button.tag * kSCREEN_WIDTH, 0);
+    //3. 内容滚动视图滚动到对应位置
+    CGPoint offset = self.contentView.contentOffset;
+    self.contentView.contentOffset = CGPointMake(button.tag * kSCREEN_WIDTH, offset.y);
 }
 /// 选中标签
 /// @param button 选中的标签
@@ -310,7 +324,7 @@ static NSString * const ID = @"CONTENTCELL";
     [cell.contentView addSubview:vc.view];
     //设置内边距
     if (@available(iOS 11.0, *)) {
-         vc.tableView.contentInset = UIEdgeInsetsMake(kSTATUS_BAR_HEIGHT, 0, 0, 0);
+         vc.tableView.contentInset = UIEdgeInsetsMake(kTOP_TAB_BAR_HEIGHT, 0, 0, 0);
     }
     else {
         vc.tableView.contentInset = UIEdgeInsetsMake(kTOP_TAB_BAR_HEIGHT + kNAVIGATION_BAR_HEIGHT + kSTATUS_BAR_HEIGHT, 0, kTAB_BAR_HEIGHT, 0);
@@ -324,9 +338,12 @@ static NSString * const ID = @"CONTENTCELL";
 /// @param scrollView 滚动视图
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     //计算当前页数:
-    NSInteger page = scrollView.contentOffset.x / kSCREEN_WIDTH;
-    
+    NSUInteger page = scrollView.contentOffset.x / kSCREEN_WIDTH;
+    NSLog(@"%f",scrollView.contentOffset.x);
+    //
+    if (_selectPage == page) return;
     //选中当前页对应的标签
-    [self selectedTab:self.tabs[page]];
+    [self tabClick:self.tabs[page]];
+    _selectPage = page;
 }
 @end

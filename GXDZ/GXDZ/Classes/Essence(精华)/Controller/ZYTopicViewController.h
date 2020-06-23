@@ -13,10 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 帖子控制器
 @interface ZYTopicViewController : UITableViewController
-
 /// 帖子类型
-
 @property (nonatomic, assign) ZYTopicItemType topicType;
+
+- (void)reload;
+//- (void)tabBarItemClickRefresh;
 
 @end
 

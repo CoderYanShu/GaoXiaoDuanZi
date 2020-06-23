@@ -41,11 +41,12 @@ static NSString *ID = @"ZYTopicCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self loadNewData];
-    
     [self setUpTableView];
-    
+    //设置上下拉刷新
     [self setUpRefreshView];
+    
+    //下拉刷新
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)setUpTableView {
@@ -66,10 +67,11 @@ static NSString *ID = @"ZYTopicCell";
     self.tableView.mj_footer = footer;
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    //设置滚动指示器的 插入
-    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    NSLog(@"%@==%f",self.title, self.tableView.contentInset.top);
+   self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    
 }
 #pragma mark - 加载新数据
 - (void)loadNewData {
@@ -85,7 +87,7 @@ static NSString *ID = @"ZYTopicCell";
     parameters[@"tybe"] = @(self.topicType);
     
     [self.manager GET:kURL_STRING parameters:parameters progress:nil success:^(NSURLSessionDataTask *task, NSDictionary  *responseObject) {
-    
+   
         //1.结束刷新
         [self.tableView.mj_header endRefreshing];
         //有数据 显示 mj_footer
@@ -129,7 +131,12 @@ static NSString *ID = @"ZYTopicCell";
         //4.刷新列表
         [self.tableView reloadData];
     } failure:nil];
-    
+}
+
+
+#pragma mark - 重新加载数据(供外界调用,如:重复点击顶部标签时调用)
+- (void)reload {
+     [self.tableView.mj_header beginRefreshing];
 }
 
 #pragma mark - Table view data source
@@ -141,16 +148,13 @@ static NSString *ID = @"ZYTopicCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ZYTopicCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
-    
     cell.topicItem = self.topicItems[indexPath.row];
-    
     return cell;
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ZYTopicItem *topicItem = self.topicItems[indexPath.row];
-    
     return topicItem.cellHeight;
 }
 @end

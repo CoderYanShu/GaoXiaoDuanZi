@@ -28,20 +28,6 @@
 @end
 
 @implementation ZYTopicCell
-#pragma mark- 懒加载
-//- (ZYTopicTextView *)textView {
-//    if (!_textView) {
-//        _textView = [[ZYTopicTextView alloc] init];
-//    }
-//    return _textView;
-//}
-//
-//- (ZYTopicPictView *)pictView {
-//    if (!_pictView) {
-//        _pictView = [[ZYTopicPictView alloc] init];
-//    }
-//    return _pictView;
-//}
 #pragma mark- 初始化
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
@@ -77,6 +63,7 @@
     }
     return self;
 }
+
 #pragma mark- setter
 - (void)setTopicItem:(ZYTopicItem *)topicItem {
     _topicItem = topicItem;
