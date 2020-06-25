@@ -25,6 +25,8 @@ static NSString * const ID = @"CONTENTCELL";
 @property (nonatomic, assign) BOOL isInitial;
 /// 选中下划线
 @property (nonatomic, strong) UIView *underLine;
+/// 标记上一次偏移量
+@property (nonatomic, assign) CGFloat lastOffsetX;
 /// 标记选中页
 @property (nonatomic ,assign) NSInteger selectPage;
 /// 标记选中按钮
@@ -110,7 +112,7 @@ static NSString * const ID = @"CONTENTCELL";
     //注册 UICollectionViewCell
     [_contentView registerClass:UICollectionViewCell.class forCellWithReuseIdentifier:ID];
 
-    //取消过大指示条
+    //取消指示条
     _contentView.showsHorizontalScrollIndicator = NO;
     _contentView.showsVerticalScrollIndicator = NO;
     //启动分页
@@ -258,7 +260,6 @@ static NSString * const ID = @"CONTENTCELL";
 /// 点击标签
 /// @param button 点击的标签
 - (void)tabClick:(UIButton *)button {
-
     //1.判断是否重复点击标签
     if (button == _selectButton) {
         //获取子控制器
@@ -269,20 +270,26 @@ static NSString * const ID = @"CONTENTCELL";
     //2. 选中标签
     [self selectedTab:button];
     //3. 内容滚动视图滚动到对应位置
-    CGPoint offset = self.contentView.contentOffset;
-    self.contentView.contentOffset = CGPointMake(button.tag * kSCREEN_WIDTH, offset.y);
+    self.contentView.contentOffset = CGPointMake(button.tag * kSCREEN_WIDTH, 0);
+    
+    _lastOffsetX = button.tag * kSCREEN_WIDTH;
 }
 /// 选中标签
 /// @param button 选中的标签
 - (void)selectedTab:(UIButton *)button {
+    
     //1. 取消前一个标记选中标签的选中状态
     self.selectButton.selected = NO;
+    
     //2. 当前标签设置为选中状态
     button.selected = YES;
+    
     //3. 设置标记选中标签为当前标签
     self.selectButton = button;
+    
     //4.滚动标签至居中
     [self scrollTabToCenter:button];
+    
     //5. 移动下划线到当前标签
     [UIView animateWithDuration:0.1 animations:^{
         self.underLine.centerX = button.centerX;
@@ -290,25 +297,78 @@ static NSString * const ID = @"CONTENTCELL";
 }
 /// 滚动标签至居中
 - (void)scrollTabToCenter:(UIButton *)button {
+    
     // 计算标签到屏幕中心的偏移量: 按钮中心到屏幕中心的距离
     CGFloat offsetX = button.center.x - kSCREEN_WIDTH * 0.5;
+    
     //如果 偏移量 小于0 ,将 偏移量 = 0
     offsetX = offsetX < 0 ? 0 : offsetX;
+    
     //最大偏移量
     CGFloat maxOffsetX = self.topTabBar.contentSize.width - kSCREEN_WIDTH;
+    
     //如果 偏移量 大于 最大偏移量,将 偏移量 = 最大偏移量
     offsetX = offsetX > maxOffsetX ? maxOffsetX : offsetX;
+    
     //设置滚动到指定点动画
     [self.topTabBar setContentOffset:CGPointMake(offsetX, 0) animated:YES];
 }
+#pragma mark- UICollectionViewDelegate
+/// 滚动已结束，正在减速滚动移动时调用
+/// @param scrollView 滚动视图
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    //计算当前页数:
+    NSUInteger page = scrollView.contentOffset.x / kSCREEN_WIDTH;
 
+    //选中当前页对应的标签
+    [self selectedTab:self.tabs[page]];
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    // 获取偏移量
+    CGFloat offsetX = scrollView.contentOffset.x;
+    
+    //当前角标
+    NSInteger currentIndex = offsetX / kSCREEN_WIDTH;
+    //当前标签
+    UIButton *currentTab = self.tabs[currentIndex];
+    
+    //左边角标
+    NSInteger leftIndex = currentIndex - 1;
+    //左边标签
+    UIButton *leftTab = leftIndex >= 0 ? self.tabs[leftIndex] : nil;
+    
+    //右边角标
+    NSInteger rightIndex = currentIndex + 1;
+    //右边标签
+    UIButton *rightTab = rightIndex < self.tabs.count ? self.tabs[rightIndex] : nil;
+  
+    // 移动距离
+    CGFloat offsetDelta = offsetX - _lastOffsetX;
+    
+    // 获取两个标题中心点距离
+    CGFloat centerDelta = 0;
+    if (offsetDelta > 0) {
+        centerDelta = rightTab.x - currentTab.x;
+    }
+    else if (offsetDelta < 0) {
+        centerDelta = currentTab.x - leftTab.x;
+    }
+    
+    //计算下划线偏移量
+    CGFloat underLineTransformX = offsetDelta * centerDelta / kSCREEN_WIDTH;
+    
+    self.underLine.centerX += underLineTransformX;
+
+    _lastOffsetX = offsetX;
+}
+    
 #pragma mark- UICollectionViewDataSource
-- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
     return self.childViewControllers.count;
 }
 
-- (UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
     
@@ -320,30 +380,17 @@ static NSString * const ID = @"CONTENTCELL";
     
     //控制器视图的 frame 开始 可能不是(0, 0, 屏幕宽, 屏幕高) 所有重新设置我全屏
     vc.tableView.frame = UIScreen.mainScreen.bounds;
-    //
+    
     [cell.contentView addSubview:vc.view];
-    //设置内边距
-    if (@available(iOS 11.0, *)) {
-         vc.tableView.contentInset = UIEdgeInsetsMake(kTOP_TAB_BAR_HEIGHT, 0, 0, 0);
-    }
-    else {
-        vc.tableView.contentInset = UIEdgeInsetsMake(kTOP_TAB_BAR_HEIGHT + kNAVIGATION_BAR_HEIGHT + kSTATUS_BAR_HEIGHT, 0, kTAB_BAR_HEIGHT, 0);
-    }
+    
+//    //设置内边距
+//    if (@available(iOS 11.0, *)) {
+//         vc.tableView.contentInset = UIEdgeInsetsMake(kTOP_TAB_BAR_HEIGHT, 0, 0, 0);
+//    }
+//    else {
+//        vc.tableView.contentInset = UIEdgeInsetsMake(kTOP_TAB_BAR_HEIGHT + kNAVIGATION_BAR_HEIGHT + kSTATUS_BAR_HEIGHT, 0, kTAB_BAR_HEIGHT, 0);
+//    }
     
     return cell;
-}
-
-#pragma mark- UICollectionViewDelegate
-/// 滚动已结束，正在减速滚动移动时调用
-/// @param scrollView 滚动视图
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    //计算当前页数:
-    NSUInteger page = scrollView.contentOffset.x / kSCREEN_WIDTH;
-    NSLog(@"%f",scrollView.contentOffset.x);
-    //
-    if (_selectPage == page) return;
-    //选中当前页对应的标签
-    [self tabClick:self.tabs[page]];
-    _selectPage = page;
 }
 @end

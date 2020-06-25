@@ -21,10 +21,12 @@
 
 #import "ZYNavigationController.h"
 
-@interface ZYTabBarController ()
+@interface ZYTabBarController ()<UITabBarControllerDelegate>
 
 /// 发布按钮(不使用 UITabBarButton 的按钮)
 @property (nonatomic ,strong) UIButton *publishButton;
+
+@property (nonatomic, strong) UIViewController *selectVc;
 
 @end
 
@@ -45,18 +47,8 @@
 
 #pragma mark- 发布按钮点击
 - (void)publishButtonClick {
-    //假数据
-    BOOL isLogOn = NO;
     
-    UIViewController *vc = nil;
-    //判断是否已经登录
-    if (isLogOn) {
-        //创建发布控制器
-        vc = [[ZYPublishViewController alloc] init];
-    }
-    else {
-        vc = [[ZYLogOnViewController alloc] init];
-    }
+    UIViewController *vc = [[ZYLogOnViewController alloc] init];
     //设置 显示风格
     vc.modalPresentationStyle = UIModalPresentationFullScreen;
      //显示
@@ -67,12 +59,15 @@
 //如果是通过导航控制器的子控制器设置 UITabBarItem 必须同时设置标题和图片
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     //添加所有子控制器
     [self addAllChildViewControllers];
     
     //设置所有设置所有子控制器的 tabBarItem
     [self setUpAllTabBarItem];
+    
+    //初始化选中控制器
+    _selectVc = self.childViewControllers[0];
+    self.delegate = self;
 }
 
 #pragma mark- 视图即将显示
@@ -141,10 +136,6 @@
     UIViewController *vc = self.viewControllers[index];
     
     //设置标题
-    /// 如果该控制器为 UITabBarController 的子控制器，
-    /// tabbarItem 没有设置 title 则使用 vc.title 为 tabbarItem 的title
-    /// 如果该控制器为 UINavigationController 的子控制器，
-    /// navigationItem 没有设置 title 则使用 vc.title 为 navigationItem 的title
     vc.tabBarItem.title = title;
     
     //设置图片
@@ -157,4 +148,20 @@
     NSDictionary *dict = @{NSFontAttributeName: [UIFont systemFontOfSize:15]};
     [vc.tabBarItem setTitleTextAttributes:dict forState:UIControlStateNormal];
 }
+
+#pragma mark- UITabBarControllerDelegate
+//选中控制器时调用
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    
+    //判断选中控制器是否是当前控制器
+    if (_selectVc == viewController) {
+        //发送通知
+        [NSNotificationCenter.defaultCenter postNotificationName:@"repeatClickTab" object:nil];
+    }
+    //标记当前控制器
+    _selectVc = viewController;
+}
+
+
+
 @end

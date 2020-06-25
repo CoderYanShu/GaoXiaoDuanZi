@@ -45,13 +45,42 @@ static NSString *ID = @"ZYTopicCell";
     //设置上下拉刷新
     [self setUpRefreshView];
     
+    //接收重复点击底部标签通知
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(repeatClickBottomTab) name:@"repeatClickTab" object:nil];
+}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if (self.topicItems.count) return;
+    
     //下拉刷新
     [self.tableView.mj_header beginRefreshing];
 }
-
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+}
+#pragma mark- 移除通知
+- (void)dealloc {
+    [NSNotificationCenter.defaultCenter removeObserver:self];
+}
 - (void)setUpTableView {
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerClass:ZYTopicCell.class forCellReuseIdentifier:ID];
+    
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    
+    CGFloat height = UIApplication.sharedApplication.statusBarFrame.size.height;
+    height += self.navigationController.navigationBar.frame.size.height;
+    height += 44; // top tab bar height
+
+    CGFloat bottom = self.tabBarController.tabBar.frame.size.height;
+
+    self.tableView.contentInset = UIEdgeInsetsMake(height, 0, bottom, 0);
 }
 
 - (void)setUpRefreshView {
@@ -59,20 +88,17 @@ static NSString *ID = @"ZYTopicCell";
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     //根据拖拽比例自动改变透明度
     header.automaticallyChangeAlpha = YES;
+    
     self.tableView.mj_header = header;
     
     //上拉刷新
     MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    if (!self.topicItems.count) footer.hidden = YES;
+    //没有数据时隐藏
+     footer.hidden = !self.topicItems.count;
+    
     self.tableView.mj_footer = footer;
 }
 
-- (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
-    NSLog(@"%@==%f",self.title, self.tableView.contentInset.top);
-   self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
-    
-}
 #pragma mark - 加载新数据
 - (void)loadNewData {
     //取消之前任务
@@ -86,8 +112,10 @@ static NSString *ID = @"ZYTopicCell";
     parameters[@"c"] = @"data";
     parameters[@"tybe"] = @(self.topicType);
     
+    NSLog(@"%@",self.title);
+    
     [self.manager GET:kURL_STRING parameters:parameters progress:nil success:^(NSURLSessionDataTask *task, NSDictionary  *responseObject) {
-   
+        
         //1.结束刷新
         [self.tableView.mj_header endRefreshing];
         //有数据 显示 mj_footer
@@ -133,12 +161,32 @@ static NSString *ID = @"ZYTopicCell";
     } failure:nil];
 }
 
-
-#pragma mark - 重新加载数据(供外界调用,如:重复点击顶部标签时调用)
+#pragma mark - 加载数据(供外界(顶部标签重复点击)调用接口)
 - (void)reload {
-     [self.tableView.mj_header beginRefreshing];
+    [self.tableView.mj_header beginRefreshing];
+}
+#pragma mark - 底部标签重复点击 加载数据
+- (void)repeatClickBottomTab {
+   
+    UITableView *tableView = [self fetchTableView:UIApplication.sharedApplication.keyWindow];
+    [tableView.mj_header beginRefreshing];
 }
 
+
+#pragma mark- 递归找tableView
+- (UITableView *)fetchTableView:(UIView *)view {
+    
+    for (UIView *subview in view.subviews) {
+       
+        if ([subview isKindOfClass:UITableView.class]) return (UITableView *)subview;
+       
+        UITableView *tableView = [self fetchTableView:subview];
+        
+        if (tableView) return tableView;
+        
+    }
+    return nil;
+}
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 

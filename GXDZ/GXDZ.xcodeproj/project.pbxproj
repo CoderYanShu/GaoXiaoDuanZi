@@ -343,8 +343,8 @@
 			isa = PBXGroup;
 			children = (
 				67FAB2E224946B9F00413243 /* ZYEssenceViewController.h */,
-				671C49B2249F6279007E7E60 /* ZYEnlargePictViewController.h */,
 				67FAB2E324946B9F00413243 /* ZYEssenceViewController.m */,
+				671C49B2249F6279007E7E60 /* ZYEnlargePictViewController.h */,
 				671C49B3249F6279007E7E60 /* ZYEnlargePictViewController.m */,
 				671C49BE24A1FEF3007E7E60 /* ZYTopicViewController.h */,
 				671C49BF24A1FEF4007E7E60 /* ZYTopicViewController.m */,
@@ -1073,6 +1073,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 72J95SG2T6;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GXDZ/Classes/Other(其他)/System/GXDZ.pch";
 				INFOPLIST_FILE = "GXDZ/Classes/Other(其他)/System/Info.plist";
@@ -1092,6 +1093,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 72J95SG2T6;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GXDZ/Classes/Other(其他)/System/GXDZ.pch";
 				INFOPLIST_FILE = "GXDZ/Classes/Other(其他)/System/Info.plist";

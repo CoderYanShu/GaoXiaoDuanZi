@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// 程序的主(根)控制器
+/// 程序的主控制器
 @interface ZYTabBarController : UITabBarController
 
 @end
